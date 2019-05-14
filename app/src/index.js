@@ -1,4 +1,4 @@
 // import styles here
-import './styles.scss';
+import './styles/styles.scss';
 
 // js here -->
