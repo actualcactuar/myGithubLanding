@@ -1,0 +1,30 @@
+{
+  "name": "webkit-sass-babel-project-core",
+  "version": "1.0.0",
+  "description": "starter project template, clone repo then npm i then npm start and youre good to go",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack:build": "webpack --mode=production --devtool=false --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.js"
+  },
+  "author": "Jiri Kiviniemi (actualcactuar)",
+  "license": "UNLICENCED",
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5"
+  }
+}
