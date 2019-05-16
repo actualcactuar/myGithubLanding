@@ -11,6 +11,20 @@ body {
     font-family: $font-title;
     font-size: 5rem;
     text-align: center;
+    color:$color-black;
+    position: relative;
+    display: block;
+    padding-bottom: 1rem;
+
+    &:after{
+        position: absolute;
+        content:"";
+        bottom: 1rem;
+        right: 15%;
+        width: 50%;
+        border-bottom:5px solid $color-black;
+        border-radius: 50px;
+    }
 }
 .title-small{
     font-family: $font-title;
