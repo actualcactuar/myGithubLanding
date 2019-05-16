@@ -6,3 +6,14 @@ html {
 body {
     font: $font-weight-default $font-size-default $font-main;
 }
+
+.title-large{
+    font-family: $font-title;
+    font-size: 5rem;
+    text-align: center;
+}
+.title-small{
+    font-family: $font-title;
+    font-size: 2rem;
+    text-align: center;
+}
