@@ -18,7 +18,7 @@
         background-position: 50%;
         transform: scale(10, 10);
         opacity: 0;
-        transition: transform .3s, opacity 1s;
+        transition: transform .5s, opacity 1s;
 
 
     }
@@ -33,4 +33,7 @@
 
 .u-text-center{
     text-align: center;
+}
+.u-text-right{
+    text-align: right;
 }

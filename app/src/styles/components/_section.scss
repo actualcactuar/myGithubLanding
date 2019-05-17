@@ -13,6 +13,25 @@
         padding: 3rem 6rem;
         margin:0 6rem;
     }
+
+    &--clip{
+        padding: 15rem 0rem;
+        clip-path: polygon(0 10rem,100% 0, 100% calc(100% - 10rem), 0 100%);
+        z-index: 10;
+    }
+
+    &__dark{
+        color:$color-white;
+        background-color: $color-black;
+    }
+
+    &.footer{
+        background-image:linear-gradient(90deg, rgba($color-black,0.4),rgba($color-black,0.6)), url("/assets/wallpapers/browser-black-paint.jpg");
+        margin-top: -10rem;
+        padding-top:10rem;
+        min-height: calc(50vh + 10rem);
+        color:$color-white;
+    }
 }
 
 @media screen and (max-width:$small-tablet){
