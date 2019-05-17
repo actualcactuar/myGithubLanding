@@ -1,6 +1,7 @@
 html {
     //Hardcoded since all is relative to this
     font-size: 16px;
+
 }
 
 body {
@@ -14,20 +15,25 @@ body {
     color:$color-black;
     position: relative;
     display: block;
-    padding-bottom: 1rem;
-
-    &:after{
-        position: absolute;
-        content:"";
-        bottom: 1rem;
-        right: 15%;
-        width: 50%;
-        border-bottom:5px solid $color-black;
-        border-radius: 50px;
-    }
+    margin: 0;
 }
 .title-small{
     font-family: $font-title;
     font-size: 2rem;
     text-align: center;
 }
+
+
+@media screen and (max-width:$small-tablet){
+
+    .title-large{
+        font-size: 3.5rem;
+    }
+} 
+
+@media screen and (max-width:$large-mobile){
+
+    .title-large{
+        font-size: 2.75rem;
+    }
+} 

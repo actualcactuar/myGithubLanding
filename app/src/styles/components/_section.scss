@@ -3,4 +3,24 @@
     padding: 1rem;
     position: relative; 
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:$gutter-vertical auto 0;
+
+    &__header{
+        border: 5px solid $color-black;
+        padding: 3rem 6rem;
+        margin:0 6rem;
+    }
 }
+
+@media screen and (max-width:$small-tablet){
+    .section{
+
+        &__header{
+            padding:2rem 4rem;
+            border-width: 3px;
+        }
+    }
+} 
