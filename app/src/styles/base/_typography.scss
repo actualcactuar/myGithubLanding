@@ -6,33 +6,68 @@ html {
 
 body {
     font: $font-weight-default $font-size-default $font-main;
+    color: $color-black;
 }
 
-.title-large{
+.title-primary{
     font-family: $font-title;
     font-size: 5rem;
     color:$color-black;
     position: relative;
     display: block;
     margin: 0;
+
+    &--border{
+        border: 5px solid $color-black;
+        padding: 3rem 6rem;
+    }
 }
-.title-small{
+
+.title-secondary{
     font-family: $font-title;
     font-size: 2rem;
     text-align: center;
+
+    &--border{
+
+        display: inline-block;
+        margin: 0 0 2rem;
+        border: 3px solid $color-white;
+        padding: 2rem 4rem;
+    }
+
+}
+
+.first-letter{
+    text-align:left;
+    &::first-letter{
+        @include first-letter;
+    }
 }
 
 
 @media screen and (max-width:$small-tablet){
 
-    .title-large{
+    .title-primary{
         font-size: 3.5rem;
+        padding: 2rem 3.5rem;
+        border-width: 4px;
     }
 } 
 
 @media screen and (max-width:$large-mobile){
 
-    .title-large{
+    .title-primary{
         font-size: 2.75rem;
+        border-width: 3px;
+        padding: 2rem 2rem;
+    }
+
+    .title-secondary{
+        padding: 1.5rem 3rem;
     }
 } 
+
+@media screen and (max-width: $small-mobile){
+    
+}

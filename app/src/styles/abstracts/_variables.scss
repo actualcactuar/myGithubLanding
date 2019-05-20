@@ -17,6 +17,9 @@ $col-padding: 1rem 2rem;
 
 //LAYOUT
 $gutter-vertical: 5rem;
+$section-clip : polygon(0 10rem,100% 0, 100% calc(100% - 10rem), 0 100%);
+
+
 
 //SHADOWS
 $card-shadow: 0px 3px 7px -4px;

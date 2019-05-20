@@ -5,3 +5,12 @@
         clear: both;
     }
 }
+
+
+@mixin first-letter {
+    font-size: 3rem;
+    float: left;
+    margin: 0 5px 0 0;
+    font-family: $font-title;
+    line-height: 2.5rem;
+}
