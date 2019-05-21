@@ -31,6 +31,7 @@
     &__dark{
         color:$color-white;
         background-color: $color-black;
+        background-color: var(--theme-color-default);
     }
 
     &__light{
@@ -41,6 +42,7 @@
 
     &.footer{
         background-image:linear-gradient(90deg, rgba($color-black,0.4),rgba($color-black,0.6)), url("/assets/wallpapers/browser-black-paint.jpg");
+        background-image: var(--theme-footer-bg-default);
         min-height: calc(50vh + 10rem);
         color:$color-white;
         padding-top: 2rem;

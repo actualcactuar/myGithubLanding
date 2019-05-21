@@ -1,6 +1,15 @@
+:root{
+    --theme-color-default: #323232;
+    --theme-footer-bg-default: linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url("/assets/wallpapers/browser-black-paint.jpg");
+    /*
+    --theme-color-default: #0577b9;
+    --theme-footer-bg-default: linear-gradient(90deg,rgba(5, 119, 185,0.4),rgba(5, 119, 185,0.6)),url("/assets/wallpapers/browser-black-paint.jpg");
+    */
+}
 //COLORS
 $color-white:#fefefe;
 $color-black:#323232;
+$color-primary:#0577b9;
 $color-card-white:#f9f9f9;
 
 // FONT

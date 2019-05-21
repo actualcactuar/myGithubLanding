@@ -24,7 +24,7 @@
                 <h1 class="title-primary title-primary--border">Awesome title</h1>
             </div>
             
-
+            <theme-switch active-theme="default"></theme-switch>
         </div>
 
         
@@ -112,9 +112,13 @@
                     <div class="col-break">
 
                         <div class="input">
-                            <input type="text" class="input__field" placeholder="asd">
-                            <span class="input__placeholder">Placeholder</span>
-                            <i class="input__icon fal fa-pen-alt fa-fw fa-lg"></i>
+                            <input type="email" class="input__field" placeholder="dummy">
+                            <span class="input__placeholder">email</span>
+                        </div>
+
+                        <div class="input">
+                            <textarea type="text" class="input__field" placeholder="dummy"></textarea>
+                            <span class="input__placeholder">message</span>
                         </div>
 
                     </div>
@@ -125,5 +129,7 @@
 
     <!--Scripts-->
     <script src="/dist/main.js"></script>
+    <!--Custom elements, load only for browsers that support es6-->
+    <script src="/customelements/themeswitch.js" type="module"></script>
 </body>
 </html>
