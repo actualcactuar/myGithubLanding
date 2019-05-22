@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    main:['./app/src/index.js'],
+    main:['./src/index.js'],
   },
   mode:'development',
   devtool:'source-map',
@@ -39,12 +39,12 @@ module.exports = {
     ignored: /node_modules/
   },
   devServer: {
-    contentBase: path.join(__dirname+'/app'),
+    contentBase: path.join(__dirname),
     publicPath:'/dist/',
     compress: true,
     watchContentBase: true,
     port: 9000,
-    index: 'app/index.html',
+    index: 'index.html',
     inline: true,
     proxy: {
       '/api': 'http://localhost:3000'
