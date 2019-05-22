@@ -9,8 +9,8 @@ const themes = {
         "--theme-footer-bg-default":"linear-gradient(90deg,rgba(16, 151, 230,0.6),rgba(16, 151, 230,0.8)),url(\"/assets/wallpapers/browser-black-paint.jpg\")"
     },
     secondary:{
-        "--theme-color-default":"#ff0049",
-        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(255, 0, 73,0.6),rgba(255, 0, 73,0.8)),url(\"/assets/wallpapers/browser-black-paint.jpg\")"
+        "--theme-color-default":"#fa3678",
+        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(250, 54, 120,0.6),rgba(250, 54, 120,0.8)),url(\"/assets/wallpapers/browser-black-paint.jpg\")"
     },
     tertiary:{
         "--theme-color-default":"#23c077",
