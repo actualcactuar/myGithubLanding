@@ -94,7 +94,7 @@ const tpl = () => `
             background-color: #0577b9;
         }
         .theme-switch__option[theme="secondary"]{
-            background-color: #ff0049;
+            background-color: #fa3678;
         }
         .theme-switch__option[theme="tertiary"]{
             background-color: #23c077;
