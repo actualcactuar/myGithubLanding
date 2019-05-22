@@ -24,8 +24,7 @@
                 <h1 class="title-primary title-primary--border">Awesome title</h1>
             </div>
             
-            <theme-switch active-theme="default"></theme-switch>
-
+          
          
         </div>
 
@@ -79,6 +78,8 @@
 
         
         <div class="section section__dark section--clip">
+            
+                <theme-switch active-theme="default"></theme-switch>
             <div class="row">
                 <div class="col-1-of-2">
                     <div class="u-text-center">
@@ -133,5 +134,11 @@
     <script src="/dist/main.js"></script>
     <!--Custom elements, load only for browsers that support es6-->
     <script src="/customelements/themeswitch.js" type="module"></script>
+    <script>
+        function toggleActive(button){
+            var parent = button.parentNode;
+            parent.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
