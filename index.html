@@ -92,7 +92,17 @@
         
         <div class="section section__dark section--clip">
             
-                <theme-switch active-theme="default"></theme-switch>
+            <button class="u-ripple icon-btn" trigger-for="sample-theme-switch">
+                <div class="btn__levels">
+                    <div class="btn__level--first">
+                        <i class="fal fa-ellipsis-v-alt fa-fw"></i>
+                    </div>
+                    <div class="btn__level--second">
+                        <i class="fal fa-times fa-fw"></i>
+                    </div>
+                </div>
+            </button>
+                <theme-switch id="sample-theme-switch" active-theme="default"></theme-switch>
             <div class="row">
                 <div class="col-1-of-2">
                     <div class="u-text-center">
@@ -137,7 +147,18 @@
                             <span class="input__placeholder">message</span>
                         </div>
 
-                        <button class="u-ripple btn"><i class="fal fa-paper-plane fa-fw"></i> Get in touch!</button>
+                        <button class="u-ripple btn">
+                            <div class="btn__levels">
+                                <div class="btn__level--first">
+                                    <i class="fal fa-paper-plane fa-fw"></i> Get in touch!
+                                </div>
+                                <div class="btn__level--second">
+                                    <i class="fal fa-spinner-third fa-fw fa-spin"></i>
+                                </div>
+                            </div>
+                        </button>
+
+                        
 
                     </div>
                 </div>
