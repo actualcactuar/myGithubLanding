@@ -41,7 +41,7 @@
     }
 
     &.footer{
-        background-image:linear-gradient(90deg, rgba($color-black,0.4),rgba($color-black,0.6)), url("/assets/wallpapers/browser-black-paint.jpg");
+        background-image:linear-gradient(90deg, rgba($color-black,0.4),rgba($color-black,0.6));
         background-image: var(--theme-footer-bg-default);
         min-height: calc(50vh + 10rem);
         color:$color-white;
@@ -50,6 +50,15 @@
         @supports (clip-path:$section-clip){
             padding-top:10rem;
         }
+    }
+
+    &.header{
+        background-image:linear-gradient(90deg, rgba($color-black,0.4),rgba($color-black,0.6));
+        background-image: var(--theme-footer-bg-default);
+        color:$color-white;
+        margin-top: 0;
+        padding-top: 5rem;
+        clip-path: polygon(0 0rem, 100% 0, 100% calc(100% - 10rem), 0 100%);
     }
 }
 

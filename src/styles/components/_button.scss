@@ -37,3 +37,12 @@
         }
     }
 }
+
+a.btn{
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+        text-underline-position: under;
+    }   
+}
