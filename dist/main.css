@@ -6,6 +6,37 @@
     --theme-footer-bg-default: linear-gradient(90deg,rgba(5, 119, 185,0.4),rgba(5, 119, 185,0.6)),url("/assets/wallpapers/browser-black-paint.jpg");
     */ }
 
+.btn, .icon-btn {
+  font: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+.u-ripple, .u-ripple-light {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden; }
+  .u-ripple:after, .u-ripple-light:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #323232 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s; }
+  .u-ripple:active:after, .u-ripple-light:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s; }
+
 body {
   margin: 0; }
 
@@ -64,30 +95,8 @@ body {
     padding: 1.5rem 2rem;
     font-size: 1.5rem; } }
 
-.u-ripple {
-  position: relative;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden; }
-  .u-ripple:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    background-image: radial-gradient(circle, #323232 10%, transparent 10.01%);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    transform: scale(10, 10);
-    opacity: 0;
-    transition: transform .5s, opacity 1s; }
-  .u-ripple:active:after {
-    transform: scale(0, 0);
-    opacity: .3;
-    transition: 0s; }
+.u-ripple-light:after {
+  background-image: radial-gradient(circle, #fefefe 10%, transparent 10.01%); }
 
 .u-text-center {
   text-align: center; }
@@ -148,6 +157,34 @@ body {
   .section__header {
     padding: 1rem !important; } }
 
+.btn {
+  margin-top: 1rem;
+  padding: .75rem 1.5rem;
+  border-radius: 50px;
+  background-color: #fefefe;
+  color: #323232; }
+
+.icon-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0;
+  background-color: #fefefe;
+  color: #323232; }
+
+.btn__levels, .icon-btn__levels {
+  position: relative;
+  height: 22px;
+  overflow: hidden;
+  transition: width 200ms ease; }
+
+.btn [class^="btn__level--"], .icon-btn [class^="btn__level--"] {
+  transition: transform 200ms ease;
+  white-space: nowrap; }
+
+.btn.active [class^="btn__level--"], .icon-btn.active [class^="btn__level--"] {
+  transform: translateY(-100%); }
+
 .card {
   margin: 1rem;
   background-color: #f9f9f9;
@@ -197,17 +234,16 @@ body {
     width: 16rem; }
   .input__placeholder {
     position: absolute;
-    bottom: 0;
+    top: 1.75rem;
     left: calc(1rem + 2px);
     height: 1rem;
     line-height: 1rem;
-    transition: transform 100ms ease, font-size 100ms ease;
-    transform: translateY(0rem);
+    transition: transform 200ms ease, font-size 200ms ease;
+    transform: translateY(-3rem);
     font-size: .8rem; }
-  .input__field:placeholder-shown + .input__placeholder {
+  .input__field:not(:focus):placeholder-shown + .input__placeholder {
     transform: translateY(-1rem);
-    font-size: 1rem;
-    top: 1.75rem; }
+    font-size: 1rem; }
 
 .row {
   max-width: 71.25rem;
