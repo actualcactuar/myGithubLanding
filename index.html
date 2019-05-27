@@ -15,95 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
     <!--Styles-->
     <link rel="stylesheet" href="/dist/main.css">
-    <style>
-    .browser {
-    width: 12em;
-    height: 9em;
-    margin-top: 4rem;
-    perspective: 100px;
-    transform-style: preserve-3d;
-    font-size: 16px;
-    }
-
-    .browser__window {
-        height: 100%;
-        background-color: #fff;
-        transform: rotate3d(0,3,-1,10deg);
-        box-shadow: -2px 2px 4px -2px #333;
-        background-image: url(/assets/wallpapers/htmlcode.png);
-    background-size: cover;
-    }
-
-    .browser__toolbar {
-        height: 1em;
-        width: 100%;
-        background-color: #dadada;
-        transform: translate3d(10px,10px,10px);
-        display: flex;
-        align-items: center;
-        padding: .5rem;
-    box-shadow: -4px 4px 4px -4px #333;
-    }
-
-    .browser__control {
-        height: .25em;
-        width: .25rem;
-        border-radius: 50%;
-        margin-right: .1em;
-        box-shadow: -1px 1px 1px 0px #9b9b9b;
-    }
-    .browser__control.close{
-        background-color: #ed1c52;
-    }
-    .browser__control.minimize{
-        background-color: #edcd1c;
-    }
-    .browser__control.fullscreen{
-        background-color: #0ada87;
-    }
-    .spacer {
-    flex: 1 1 auto;
-}
-
-span.browser__address {
-    font-size: .3em;
-    font-family: 'Helvetica',sans-serif;
-    color: #333;
-}
-
-.browser__address-bar {
-    width: 100px;
-    text-align: center;
-    height: .6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #c0c0c0;
-    border-radius: 50px;
-}.browser__content {
-    height: calc(100% - 16px);
-    background-color:rgba(255, 255, 255, .5);
-    transform: translate3d(10px,16px,10px);
-    box-shadow: -4px 4px 4px -4px #333;
-    display: flex;
-}
-.browser__sidenav {
-    background-color: rgba(255, 255, 255, .5);
-    height: 100%;
-    width: 50px;
-    transform: translate3d(10px, 10px, 10px);
-    box-shadow: -4px 4px 4px -4px #333;
-}
-
-.browser__main {
-    height: 100%;
-    width: calc(100% - 60px);
-    background-color: rgba(255, 255, 255, .5);
-    transform: translate3d(10px,10px,10px);
-    margin-left: 10px;
-    box-shadow: -4px 4px 4px -4px #333;
-}
-</style>
+   
 </head>
 <body>
     <!--HTML here-->
@@ -112,28 +24,25 @@ span.browser__address {
         <div class="section header section--clip">
             <h1 class="title-primary title-primary--border">Awesome title</h1>
 
-            <div class="browser">
-                <div class="browser__window">
-                    <div class="browser__toolbar">
-                        <div class="browser__control close"></div>
-                        <div class="browser__control minimize"></div>
-                        <div class="browser__control fullscreen"></div>
-                        <span class="spacer"></span>
-                        <div class="browser__address-bar">
-                            <span class="browser__address">web.app</span>
-                        </div>
-                        <span class="spacer"></span>
-                    </div>
-                    <div class="browser__content">
-                        <div class="browser__sidenav"></div>
-                        <div class="browser__main"></div>
-                    </div>
-                </div>
-            </div>
+            
           
             <img class="avatar" src="/assets/wallpapers/me.jpg" />
+
             <a class="btn u-ripple" href="https://github.com/actualcactuar" target="_blank"><i class="fab fa-github"></i> Fork me on Github</a>
             <a class="btn u-ripple" href="https://twitter.com/actualcactuar" target="_blank"><i class="fab fa-twitter"></i> Follow me on Twitter</a>
+
+            <button class="u-ripple icon-btn" trigger-for="sample-theme-switch">
+                <div class="btn__levels">
+                    <div class="btn__level--first">
+                        <i class="fal fa-palette fa-fw"></i>
+                    </div>
+                    <div class="btn__level--second">
+                        <i class="fal fa-times fa-fw"></i>
+                    </div>
+                </div>
+            </button>
+            <theme-switch id="sample-theme-switch" active-theme="default"></theme-switch>
+            
             <div class="row">
                 <div class="col-break">
 
@@ -174,17 +83,7 @@ span.browser__address {
         
         <div class="section section__dark section--clip">
             
-            <button class="u-ripple icon-btn" trigger-for="sample-theme-switch">
-                <div class="btn__levels">
-                    <div class="btn__level--first">
-                        <i class="fal fa-palette fa-fw"></i>
-                    </div>
-                    <div class="btn__level--second">
-                        <i class="fal fa-times fa-fw"></i>
-                    </div>
-                </div>
-            </button>
-                <theme-switch id="sample-theme-switch" active-theme="default"></theme-switch>
+            
             <div class="row">
                 <div class="col-1-of-2">
                     <div class="u-text-center">

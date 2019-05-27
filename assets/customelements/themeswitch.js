@@ -6,15 +6,15 @@ const themes = {
     },
     primary:{
         "--theme-color-default":"#1097e6",
-        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(16, 151, 230,0.6),rgba(16, 151, 230,0.8)),url(\"/assets/wallpapers/browser-black-paint.jpg\")"
+        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(16, 151, 230,0.4),rgba(16, 151, 230,0.6)),url(\"/assets/wallpapers/image-from-rawpixel-id-429775-jpeg.jpg\")"
     },
     secondary:{
         "--theme-color-default":"#fa3678",
-        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(250, 54, 120,0.6),rgba(250, 54, 120,0.8)),url(\"/assets/wallpapers/browser-black-paint.jpg\")"
+        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(250, 54, 120,0.4),rgba(250, 54, 120,0.6)),url(\"/assets/wallpapers/image-from-rawpixel-id-426307-original.jpg\")"
     },
     tertiary:{
         "--theme-color-default":"#23c077",
-        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(35, 192, 119,0.6),rgba(35, 192, 119,0.8)),url(\"/assets/wallpapers/browser-black-paint.jpg\")"
+        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(35, 192, 119,0.4),rgba(35, 192, 119,0.6)),url(\"/assets/wallpapers/image-from-rawpixel-id-437303-jpeg.jpg\")"
     }
 }
 

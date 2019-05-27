@@ -1,5 +1,4 @@
 .btn{
-    margin-top: 1rem;
     padding: .75rem 1.5rem;
     border-radius: 50px;
     background-color: $color-white;
@@ -17,6 +16,7 @@
 
 .btn, .icon-btn{
     @extend %btn-core;
+    margin-top: 1rem;
 
     &__levels {
         position: relative;
