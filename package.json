@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack:build": "webpack --mode=production --devtool=false --config webpack.config.js",
+    "webpack:buildlegacy": "webpack --mode=production --devtool=false --config legacy.config.js",
+    "webpack:buildall":"npm run webpack:build && npm run webpack:buildlegacy",
     "start": "webpack-dev-server --config webpack.config.js"
   },
   "author": "Jiri Kiviniemi (actualcactuar)",
