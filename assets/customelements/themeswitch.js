@@ -2,19 +2,19 @@ const themes = {
     
     default:{
         "--theme-color-default":"#323232",
-        "--theme-footer-bg-default":"linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url(\"/assets/wallpapers/browser-black-paint.jpg\")"
+        "--theme-bg-default":"linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url(\"/assets/wallpapers/rawpixel_black_paint.jpg\")"
     },
     primary:{
-        "--theme-color-default":"#1097e6",
-        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(16, 151, 230,0.4),rgba(16, 151, 230,0.6)),url(\"/assets/wallpapers/image-from-rawpixel-id-429775-jpeg.jpg\")"
+        "--theme-color-default":"#188fa2",
+        "--theme-bg-default":"linear-gradient(90deg, rgba(2, 78, 173, 0.2),rgba(2,78,173,0.2)), url(\"/assets/wallpapers/rawpixel_vector.jpg\")"
     },
     secondary:{
-        "--theme-color-default":"#fa3678",
-        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(250, 54, 120,0.4),rgba(250, 54, 120,0.6)),url(\"/assets/wallpapers/image-from-rawpixel-id-426307-original.jpg\")"
+        "--theme-color-default":"#ef46ad",
+        "--theme-bg-default":"linear-gradient(90deg,rgba(239, 70, 173, 0.2),rgba(239, 70, 173, .2)),url(\"/assets/wallpapers/rawpixel_pink_paint.jpg\")"
     },
     tertiary:{
-        "--theme-color-default":"#23c077",
-        "--theme-footer-bg-default":"linear-gradient(90deg,rgba(35, 192, 119,0.4),rgba(35, 192, 119,0.6)),url(\"/assets/wallpapers/image-from-rawpixel-id-437303-jpeg.jpg\")"
+        "--theme-color-default":"#ffb716",
+        "--theme-bg-default":"url(\"/assets/wallpapers/rawpixel_yellow.jpg\")"
     }
 }
 
@@ -91,13 +91,13 @@ const tpl = () => `
         }
 
        .theme-switch__option[theme="primary"]{
-            background-color: #0577b9;
+            background-color: #188fa2;
         }
         .theme-switch__option[theme="secondary"]{
-            background-color: #fa3678;
+            background-color: #ef46ad;
         }
         .theme-switch__option[theme="tertiary"]{
-            background-color: #23c077;
+            background-color: #ffb716;
         }
        .theme-switch__options:before {
            content: "";

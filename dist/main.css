@@ -1,10 +1,6 @@
 :root {
   --theme-color-default: #323232;
-  --theme-footer-bg-default: linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url("/assets/wallpapers/browser-black-paint.jpg");
-  /*
-    --theme-color-default: #0577b9;
-    --theme-footer-bg-default: linear-gradient(90deg,rgba(5, 119, 185,0.4),rgba(5, 119, 185,0.6)),url("/assets/wallpapers/browser-black-paint.jpg");
-    */ }
+  --theme-bg-default: linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url("/assets/wallpapers/rawpixel_black_paint.jpg"); }
 
 .btn, .icon-btn {
   font: inherit;
@@ -116,7 +112,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5rem auto 0; }
+  margin: 5rem auto 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center; }
   .section__header {
     padding: 1rem 2rem; }
   .section--clip {
@@ -137,7 +136,7 @@ body {
     background-color: #fefefe; }
   .section.footer {
     background-image: linear-gradient(90deg, rgba(50, 50, 50, 0.4), rgba(50, 50, 50, 0.6));
-    background-image: var(--theme-footer-bg-default);
+    background-image: var(--theme-bg-default);
     min-height: calc(50vh + 10rem);
     color: #fefefe;
     padding-top: 2rem; }
@@ -146,7 +145,7 @@ body {
         padding-top: 10rem; } }
   .section.header {
     background-image: linear-gradient(90deg, rgba(50, 50, 50, 0.4), rgba(50, 50, 50, 0.6));
-    background-image: var(--theme-footer-bg-default);
+    background-image: var(--theme-bg-default);
     color: #fefefe;
     margin-top: 0;
     padding-top: 5rem;
@@ -166,7 +165,6 @@ body {
     padding: 1rem !important; } }
 
 .btn {
-  margin-top: 1rem;
   padding: .75rem 1.5rem;
   border-radius: 50px;
   background-color: #fefefe;
@@ -180,18 +178,18 @@ body {
   background-color: #fefefe;
   color: #323232; }
 
-.btn__levels, .icon-btn__levels {
-  position: relative;
-  height: 22px;
-  overflow: hidden;
-  transition: width 200ms ease; }
-
-.btn [class^="btn__level--"], .icon-btn [class^="btn__level--"] {
-  transition: transform 200ms ease;
-  white-space: nowrap; }
-
-.btn.active [class^="btn__level--"], .icon-btn.active [class^="btn__level--"] {
-  transform: translateY(-100%); }
+.btn, .icon-btn {
+  margin-top: 1rem; }
+  .btn__levels, .icon-btn__levels {
+    position: relative;
+    height: 22px;
+    overflow: hidden;
+    transition: width 200ms ease; }
+  .btn [class^="btn__level--"], .icon-btn [class^="btn__level--"] {
+    transition: transform 200ms ease;
+    white-space: nowrap; }
+  .btn.active [class^="btn__level--"], .icon-btn.active [class^="btn__level--"] {
+    transform: translateY(-100%); }
 
 a.btn {
   text-decoration: none; }
@@ -310,4 +308,7 @@ a.btn {
   border-radius: 0 50% 50% 50%;
   border: 4px solid #fefefe;
   box-shadow: -2px 3px 5px -3px #000; }
+
+theme-switch {
+  z-index: 10; }
 
