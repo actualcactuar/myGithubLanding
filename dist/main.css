@@ -131,7 +131,7 @@ body {
   .section__dark {
     color: #fefefe;
     background-color: #323232;
-    background-color: var(--theme-color-default); }
+    background-image: var(--dark-section-bg); }
   .section__light {
     color: #323232;
     background-color: #fefefe; }

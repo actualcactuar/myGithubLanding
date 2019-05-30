@@ -35,7 +35,7 @@
     &__dark{
         color:$color-white;
         background-color: $color-black;
-        background-color: var(--theme-color-default);
+        background-image: var(--dark-section-bg);
     }
 
     &__light{

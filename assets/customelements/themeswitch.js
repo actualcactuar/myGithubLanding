@@ -2,19 +2,23 @@ const themes = {
     
     default:{
         "--theme-color-default":"#323232",
-        "--theme-bg-default":"linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url(\"/assets/wallpapers/rawpixel_black_paint.jpg\")"
+        "--theme-bg-default":"linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url(\"/assets/wallpapers/rawpixel_black_paint.jpg\")",
+        "--dark-section-bg":"#323232"
     },
     primary:{
         "--theme-color-default":"#188fa2",
-        "--theme-bg-default":"linear-gradient(90deg, rgba(2, 78, 173, 0.2),rgba(2,78,173,0.2)), url(\"/assets/wallpapers/rawpixel_vector.jpg\")"
+        "--theme-bg-default":"linear-gradient(90deg, rgba(2, 78, 173, 0.2),rgba(2,78,173,0.2)), url(\"/assets/wallpapers/rawpixel_vector.jpg\")",
+        "--dark-section-bg":"linear-gradient(45deg, #c76362 0% 5%,#1e8e97 5% 25%,#0b193f 25% 75%, #1e8e97 75% 95%, #C76363 95% 100%)"
     },
     secondary:{
         "--theme-color-default":"#ef46ad",
-        "--theme-bg-default":"linear-gradient(90deg,rgba(239, 70, 173, 0.2),rgba(239, 70, 173, .2)),url(\"/assets/wallpapers/rawpixel_pink_paint.jpg\")"
+        "--theme-bg-default":"linear-gradient(90deg,rgba(239, 70, 173, 0.2),rgba(239, 70, 173, .2)),url(\"/assets/wallpapers/rawpixel_pink_paint.jpg\")",
+        "--dark-section-bg":"#ef46ad"
     },
     tertiary:{
         "--theme-color-default":"#ffb716",
-        "--theme-bg-default":"url(\"/assets/wallpapers/rawpixel_yellow.jpg\")"
+        "--theme-bg-default":"url(\"/assets/wallpapers/rawpixel_yellow.jpg\")",
+        "--dark-section-bg":"#ffb716"
     }
 }
 
@@ -76,7 +80,7 @@ const tpl = () => `
            height: 36px;
            margin: 8px;
            border-radius:50%;
-           overflow:hidden;    
+           position:relative; 
            transition: transform 200ms ease 100ms, opacity 200ms ease 100ms;
            opacity: 0;
            transform: translateY(1rem);
@@ -120,12 +124,23 @@ const tpl = () => `
            opacity: 1;
            transform: translateY(0);
        }
+       button.theme-switch__option.active::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        border: 2px solid #009fff;
+        transform: scale(1.3);
+        border-radius: 50%;
+       }
     </style>
     <div class="theme-switch">
     <!--
         <button class="theme-switch__trigger"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M112 264c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm32-112c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM256 0c-16.9 0-34.2 1.6-51.7 5C104.9 24.4 24.8 104.3 5.2 203.4-29.4 378.5 116.4 512 239.5 512c8.3 0 16.5-.6 24.6-1.9 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.6 113.9 397.1 0 256 0zm191.1 288h-79.7c-35.3 0-67.4 17.9-85.7 47.8-18.2 29.7-19.6 66-3.7 97.2 4.9 9.6 4.8 21.6-.1 31.3-2.4 4.6-7.9 12.6-18.7 14.3-6.3 1-12.9 1.5-19.7 1.5-54.6 0-114.1-31.3-155.5-81.6-44-53.6-60.9-120.6-47.4-188.7 17.1-86.6 87-156.2 173.9-173.2 15.2-3 30.5-4.5 45.5-4.5 123.1 0 223.6 99.9 224 222.6 0 18.3-14.8 33.3-32.9 33.3zM368 136c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM240 88c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24z"/></svg></button>-->
         <div class="theme-switch__options">
-            <button class="theme-switch__option" theme="default"></button>
+            <button class="theme-switch__option active" theme="default"></button>
             <button class="theme-switch__option" theme="primary"></button>
             <button class="theme-switch__option" theme="secondary"></button>
             <button class="theme-switch__option" theme="tertiary"></button>
@@ -160,8 +175,12 @@ class ThemeSwitch extends HTMLElement {
             option.style.transitionDelay = `${(25 * index) + 100}ms`;
             option.addEventListener('click',event => {
                 var theme = option.getAttribute('theme');
+                var activeOption = this.shadowRoot.querySelector('.theme-switch__option.active');
+                if(activeOption){
+                    activeOption.classList.remove('active');
+                }
                 if(theme in themes){
-
+                    option.classList.add('active');
                     this.setAttribute('active-theme',theme);
                 }
             })
