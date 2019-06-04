@@ -2,6 +2,7 @@
     position: relative;
     padding: 0 0 1rem 0;
     margin:1rem 0 0 0;
+    z-index: 1;
 
     &__field{
         border:none;
@@ -53,6 +54,7 @@
         transition:transform 200ms ease, font-size 200ms ease;
         transform: translateY(-3rem);
         font-size: .8rem;
+        z-index: -1;
     }
 
     &__field:not(:focus):placeholder-shown + &__placeholder{

@@ -10,4 +10,8 @@
         
     text-align: left!important;
     }
+
+    & > *:first-child{
+        margin-top:0;
+    }
 }

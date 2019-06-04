@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Icons-->
-    <link href="/assets/fa/css/fontawesome.min.css" rel="stylesheet">
-    <link href="/assets/fa/css/light.min.css"  rel="stylesheet">
-    <link href="/assets/fa/css/brands.min.css"  rel="stylesheet">
+    <script src="https://kit.fontawesome.com/29e0ac0d41.js"></script>
 
     <!--Fonts-->
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:300,400">
@@ -50,24 +48,25 @@
         </div>
 
         <div class="section section__light section--clip">
+            
+            <h2 class="title-secondary title-secondary--border">>_whoami</h2>
             <div class="row">
                 <div class="col-1-of-3">
                     <div class="u-text-center">
-                        <h2 class="title-secondary">50:50 col</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
+                        <h2 class="title-tertiary">Expertise</h2>
+                        <p>A freshy baked bachelor of business administration (BBA), Degree Programme in Business Information Technology.</p><p> 2+ years experience working as a frontend developer. Agile project management with Scrum. Service Design, User Stories etc.</p>
                     </div>
                 </div>
                 <div class="col-1-of-3">
                     <div class="u-text-center">
-                        <h2 class="title-secondary">50:50 col</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
+                        <h2 class="title-tertiary">Javascript</h2>
+                        <p>As a ”full-stack JS” developer I'm familiar with wide range of frameworks, frontend- and backend- technologies in addition to my undying love for vanilla.js.</p><p> Angular, Typescript, Sass, Webpack, Babel, React, Node, NPM, noSQL, PWA, Custom Elements API, Parcel, ES6, ESNext.</p>
                     </div>
                 </div>
                 <div class="col-1-of-3">
                     <div class="u-text-center">
-                        <h2 class="title-secondary">50:50 col</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
+                        <h2 class="title-tertiary">Cloud platforms</h2>
+                        <p>Skilled with cloud platform services such as Azure and Firebase. Serverless applications with cloud functions and Node.js APIs hosted in application containers.</p>
                     </div>
                 </div>
             </div>
@@ -76,7 +75,8 @@
         
         <div class="section section__dark section--clip">
             
-            
+            <h2 class="title-secondary title-secondary--border">awesome title</h2>
+
             <div class="row">
                 <div class="col-1-of-2">
                     <div class="u-text-center">
@@ -95,6 +95,9 @@
         </div>
 
         <div class="section section__light section--clip">
+            
+            <h2 class="title-secondary title-secondary--border">awesome title</h2>
+
             <div class="row">
                 <div class="col-1-of-3">
                     <div class="u-text-center">
@@ -119,14 +122,15 @@
         </div>
 
         <div class="section footer">
+            
+                <h2 class="title-secondary title-secondary--border">Awesome secondary title</h2>
            
                 <div class="row">
                     <div class="col-break">
     
                             <div class="u-text-center">
-                                <h2 class="title-secondary title-secondary--border">Awesome secondary title</h2>
                                 
-                                <p class="first-letter">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
                             </div>
     
                     </div>
@@ -136,9 +140,8 @@
                 <div class="row">
                     <div class="col-break">
                         <div class="card">
-                            
-                            <h2 class="title-secondary">Get in touch</h2>
-                            <p class="first-letter">Wanna get in touch? Fill out the form below and I'll be in touch if you just let me know how and about what: Feedback on site, questions about technologies used. Anything at all!</p>
+                                <h3 class="title-secondary">Get in touch</h3>
+                            <p class="first-letter">Wanna get in touch? Fill out the form below and I'll get back to you just let me know how and about what: Feedback on site, questions about technologies used. Anything at all!</p>
                             <br/>
                             <form
                                 method="POST" 
@@ -146,13 +149,20 @@
                                 enctype="application/json"
                                 id="contactForm">
 
+                                <div class="form__completed-dialog">
+                                    <span class="icon--circle">
+                                        <i class="fal fa-check fa-lg fa-fw"></i>
+                                    </span>
+                                    <p>Form was procecced successfully</p>
+                                </div>
+
                                 <div class="input">
-                                    <input type="email" name="email" class="input__field" placeholder="dummy">
+                                    <input required type="email" name="email" class="input__field" placeholder="dummy">
                                     <span class="input__placeholder">email</span>
                                 </div>
     
                                 <div class="input">
-                                    <textarea type="text" name="message" class="input__field" placeholder="dummy"></textarea>
+                                    <textarea required type="text" name="message" class="input__field" placeholder="dummy"></textarea>
                                     <span class="input__placeholder">message</span>
                                 </div>
     

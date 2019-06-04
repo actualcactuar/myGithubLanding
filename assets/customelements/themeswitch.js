@@ -6,7 +6,7 @@ const themes = {
         "--dark-section-bg":"#323232"
     },
     primary:{
-        "--theme-color-default":"#188fa2",
+        "--theme-color-default":"#1e8e97",
         "--theme-bg-default":"linear-gradient(90deg, rgba(2, 78, 173, 0.2),rgba(2,78,173,0.2)), url(\"/assets/wallpapers/rawpixel_vector.jpg\")",
         "--dark-section-bg":"linear-gradient(45deg, #c76362 0% 5%,#1e8e97 5% 25%,#0b193f 25% 75%, #1e8e97 75% 95%, #C76363 95% 100%)"
     },

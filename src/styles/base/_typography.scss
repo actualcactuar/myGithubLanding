@@ -26,6 +26,22 @@ body {
 
 }
 
+.title-tertiary{
+    font-family: $font-title;
+    font-size: 1.5rem;
+    text-align: center;
+
+    &--border{
+
+        display: inline-block;
+        margin: 0 0 2rem;
+        border: 3px solid $color-white;
+        border-color:inherit;
+        padding: 1.5rem 3rem;
+    }
+
+}
+
 .first-letter{
     text-align:left;
     &::first-letter{

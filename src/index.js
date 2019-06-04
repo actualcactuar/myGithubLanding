@@ -8,11 +8,15 @@ document.body.setAttribute('user-agent',navigator.userAgent);
 
 //handle form submission
 var form = document.querySelector('#contactForm');
-form.addEventListener('submit', event => {
+form.addEventListener('submit', (event) => {
 
     event.preventDefault();
 
     let form = event.target;
+    
+    let button = form.querySelector('button');
+    button.classList.add('active');
+
     let formJSON = {};
 
     let inputs = form.querySelectorAll('input,textarea');
@@ -34,7 +38,13 @@ form.addEventListener('submit', event => {
     .then(res => res.json())
     .then(json => {
         form.classList.remove('sending');
+        form.classList.add('completed');
+        button.classList.remove('active');
         form.reset();
+
+        setTimeout(()=>{
+            form.classList.remove('completed');
+        },1000)
     })
 
 
