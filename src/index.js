@@ -3,25 +3,39 @@ import './styles/styles.scss';
 
 // js here -->
 
-console.log(navigator.userAgent)
 //target specific browser if needed
 document.body.setAttribute('user-agent',navigator.userAgent);
 
-class myClass {
-    constructor({name}){
-        this.name = name;
-    }
+//handle form submission
+var form = document.querySelector('#contactForm');
+form.addEventListener('submit', event => {
 
-    name () {
-        return this.name;
-    }
+    event.preventDefault();
 
-}
+    let form = event.target;
+    let formJSON = {};
 
-var app = new myClass('test');
+    let inputs = form.querySelectorAll('input,textarea');
+    inputs.forEach(input => {
+        let key = input.getAttribute('name');
+        let value = input.value;
+        formJSON[key] = value;
+    })
 
-const promise = new Promise((resolve,reject) => {
-    resolve(true)
+    form.classList.add('sending');
+
+    fetch(form.getAttribute('action'),{
+        method:form.getAttribute('method'),
+        headers: {
+                "Content-Type": form.getAttribute('enctype'),
+            },
+        body:JSON.stringify(formJSON)
+    })
+    .then(res => res.json())
+    .then(json => {
+        form.classList.remove('sending');
+        form.reset();
+    })
+
+
 })
-
-promise.then(res => console.log(res))

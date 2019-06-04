@@ -43,7 +43,7 @@ module.exports = {
     publicPath:'/dist/',
     compress: true,
     watchContentBase: true,
-    port: 9000,
+    port: 8080,
     index: 'index.html',
     inline: true,
     proxy: {

@@ -46,16 +46,6 @@
             </button>
             <theme-switch id="sample-theme-switch" active-theme="default"></theme-switch>
             
-            <div class="row">
-                <div class="col-break">
-
-                        <div class="u-text-center">
-                            <h2 class="title-secondary">primary awesome title</h2>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
-                        </div>
-
-                </div>
-            </div>
          
         </div>
 
@@ -134,7 +124,7 @@
                     <div class="col-break">
     
                             <div class="u-text-center">
-                                <h2 class="title-secondary title-secondary--border">Get in touch!</h2>
+                                <h2 class="title-secondary title-secondary--border">Awesome secondary title</h2>
                                 
                                 <p class="first-letter">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
                             </div>
@@ -147,21 +137,22 @@
                     <div class="col-break">
                         <div class="card">
                             
-                            <h2 class="title-secondary">50:50 col</h2>
-                            <p class="first-letter">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
+                            <h2 class="title-secondary">Get in touch</h2>
+                            <p class="first-letter">Wanna get in touch? Fill out the form below and I'll be in touch if you just let me know how and about what: Feedback on site, questions about technologies used. Anything at all!</p>
                             <br/>
                             <form
                                 method="POST" 
                                 action="https://us-central1-githubpagebackend.cloudfunctions.net/api/mail" 
-                                enctype="application/json">
+                                enctype="application/json"
+                                id="contactForm">
 
                                 <div class="input">
-                                    <input type="email" class="input__field" placeholder="dummy">
+                                    <input type="email" name="email" class="input__field" placeholder="dummy">
                                     <span class="input__placeholder">email</span>
                                 </div>
     
                                 <div class="input">
-                                    <textarea type="text" class="input__field" placeholder="dummy"></textarea>
+                                    <textarea type="text" name="message" class="input__field" placeholder="dummy"></textarea>
                                     <span class="input__placeholder">message</span>
                                 </div>
     
