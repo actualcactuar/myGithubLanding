@@ -3,6 +3,17 @@
     border-radius: 50px;
     background-color: $color-white;
     color:$color-black;
+
+    &[color="primary"]{
+        background-color: $color-black;
+        background-color: var(--theme-color-default);
+        color:$color-white;
+    }
+
+    &--flat{
+        box-shadow: none;
+    }
+    
 }
 
 .icon-btn{

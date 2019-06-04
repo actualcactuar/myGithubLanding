@@ -11,15 +11,16 @@
         -moz-appearance: none;
         appearance: none;
         z-index: 10;
-        color:$color-white;
+        color:$color-black;
         background-color: transparent;
         font:inherit;
-        border: 2px solid $color-white;
+        border: 1px solid $color-black;
         padding: .5rem 1rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
+        border-radius: 2rem;
 
         &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: transparent;
@@ -38,9 +39,9 @@
     }
 
     & > textarea{
-        resize: none;
-        height: 8rem;
-        width: 16rem;
+        height: auto;
+        width: 100%!important;
+        border-radius: 4px;
     }
 
     &__placeholder{

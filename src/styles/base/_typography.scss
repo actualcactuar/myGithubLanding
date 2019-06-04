@@ -9,20 +9,6 @@ body {
     color: $color-black;
 }
 
-.title-primary{
-    font-family: $font-title;
-    font-size: 5rem;
-    color:inherit;
-    position: relative;
-    display: block;
-    margin: 0;
-
-    &--border{
-        border: 4px solid $color-black;
-        border-color:inherit;
-        padding: 3rem 6rem;
-    }
-}
 
 .title-secondary{
     font-family: $font-title;
@@ -48,21 +34,44 @@ body {
 }
 
 
+.hero {
+    margin: 2rem;
+    width: calc(100% - 4rem);
+    height: 45vh;
+    border: 4px solid $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: $small-tablet;
+
+    &__title {
+        font-weight: 700;
+        font-family: $font-title;
+        font-size: 5rem;    
+        margin: 0;
+        padding: 0 2rem;
+    }
+}
+
+
 @media screen and (max-width:$small-tablet){
 
-    .title-primary{
-        font-size: 2.5rem;
-        padding: 1.5rem 2rem;
+    .hero{
+        height:40vh;
+        &__title{
+            font-size: 3.5rem;
+        }
     }
 } 
 
 @media screen and (max-width:$large-mobile){
 
-    .title-primary{
-        font-size: 2rem;
-        border-width: 3px;
+    .hero{
+        height:25vh;
+        &__title{
+            font-size: 2.25rem;
+        }
     }
-
     .title-secondary{
         padding: 1.5rem 2rem;
         font-size: 1.5rem;

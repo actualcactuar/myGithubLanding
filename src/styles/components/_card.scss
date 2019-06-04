@@ -1,12 +1,13 @@
 .card{
-    margin: 1rem;
     background-color: $color-card-white;
     padding: 1rem;
     border-radius: 2px;
     box-shadow:$card-shadow $color-black;
-    color:$color-black;
-    p{
-
-        text-align: center;
+    color:$color-black;    
+    max-width: 600px;
+    width: 100%;
+    &, * {
+        
+    text-align: left!important;
     }
 }

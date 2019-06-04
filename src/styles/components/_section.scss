@@ -61,10 +61,11 @@
         background-image: var(--theme-bg-default);
         color:$color-white;
         margin-top: 0;
-        padding-top: 5rem;
+        padding-top: 0;
         clip-path: polygon(0 0rem, 100% 0, 100% calc(100% - 10rem), 0 100%);
     }
 }
+
 
 @media screen and (max-width:$small-tablet){
     .section{
