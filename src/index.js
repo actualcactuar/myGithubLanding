@@ -27,7 +27,7 @@ if(menuTrigger && navigation) {
             setTimeout(() => {
 
                 navigation.toggle();
-            },200)
+            },400)
         })
     })
 }
