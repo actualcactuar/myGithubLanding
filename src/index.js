@@ -24,7 +24,10 @@ if(menuTrigger && navigation) {
     let navItems = navigation.querySelectorAll('a');
     navItems.forEach(item => {
         item.addEventListener('click', event => {
-            navigation.toggle();
+            setTimeout(() => {
+
+                navigation.toggle();
+            },200)
         })
     })
 }
