@@ -54,7 +54,7 @@ body {
   text-align: center; }
   .title-secondary--border {
     display: inline-block;
-    margin: 0 0 2rem;
+    margin: 2rem;
     border: 3px solid #fefefe;
     border-color: inherit;
     padding: 2rem 4rem; }
@@ -65,7 +65,7 @@ body {
   text-align: center; }
   .title-tertiary--border {
     display: inline-block;
-    margin: 0 0 2rem;
+    margin: 2rem;
     border: 3px solid #fefefe;
     border-color: inherit;
     padding: 1.5rem 3rem; }
@@ -107,7 +107,6 @@ body {
     .hero__title {
       font-size: 2.25rem; }
   .title-secondary {
-    padding: 1.5rem 2rem;
     font-size: 1.5rem; } }
 
 .u-ripple-light:after {
@@ -322,6 +321,54 @@ a.btn {
 @media screen and (max-width: 320px) {
   [class^="col"] {
     padding: 1rem !important; } }
+
+#menu-trigger {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  z-index: 101; }
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fefefe;
+  color: #323232;
+  z-index: 100;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scaleY(0);
+  transition: transform 400ms ease; }
+  .navigation.active {
+    transform: scaleY(1); }
+    .navigation.active .navigation__items {
+      opacity: 1;
+      transition: opacity 200ms ease 200ms; }
+  .navigation__items {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 200ms ease 0ms; }
+    .navigation__items a {
+      text-decoration: none;
+      color: #323232;
+      background: linear-gradient(120deg, transparent 50%, #323232 50%);
+      padding: 1rem;
+      background-size: 230%;
+      transition: background-position 200ms ease, transform 200ms ease, color 200ms ease;
+      text-transform: uppercase;
+      font-size: 1.5rem; }
+      .navigation__items a:hover {
+        background-position: 100%;
+        transform: translateX(1rem);
+        color: #fefefe; }
 
 .container {
   box-sizing: border-box;
