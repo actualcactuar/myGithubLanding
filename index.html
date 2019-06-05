@@ -19,6 +19,27 @@
     <!--HTML here-->
     <div class="container">
 
+        <button class="u-ripple icon-btn" id="menu-trigger">
+            <div class="btn__levels">
+                <div class="btn__level--first">
+                    <i class="far fa-ellipsis-v fa-lg fa-fw"></i>
+                </div>
+                <div class="btn__level--second">
+                    <i class="fal fa-times fa-fw"></i>
+                </div>
+            </div>
+        </button>
+
+        <div class="navigation">
+            <div class="navigation__items">
+                <a href="#" class="u-ripple-light">01 back to top</a>
+                <a href="#whoami" class="u-ripple-light">02 who am i</a>
+                <a href="#" class="u-ripple-light">03 awesome section</a>
+                <a href="#" class="u-ripple-light">04 other section</a>
+                <a href="#getintouch" class="u-ripple-light">05 get in touch</a>
+            </div>
+        </div>
+
         <div class="section header section--clip">
             <!--<h1 class="title-primary title-primary--border">Jiri Kiviniemi</h1>-->
             <div class="hero">
@@ -44,10 +65,11 @@
             </button>
             <theme-switch id="sample-theme-switch" active-theme="default"></theme-switch>
             
+            
          
         </div>
 
-        <div class="section section__light section--clip">
+        <div class="section section__light section--clip" id="whoami">
             
             <h2 class="title-secondary title-secondary--border">>_whoami</h2>
             <div class="row">
@@ -121,7 +143,7 @@
             </div>
         </div>
 
-        <div class="section footer">
+        <div class="section footer" id="getintouch">
             
                 <h2 class="title-secondary title-secondary--border">Awesome secondary title</h2>
            

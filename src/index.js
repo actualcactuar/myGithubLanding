@@ -6,8 +6,31 @@ import './styles/styles.scss';
 //target specific browser if needed
 document.body.setAttribute('user-agent',navigator.userAgent);
 
+let menuTrigger = document.querySelector('#menu-trigger');
+let navigation = document.querySelector('.navigation');
+if(menuTrigger && navigation) {
+
+    navigation.toggle = () => {
+        
+        navigation.classList.toggle('active');
+        menuTrigger.classList.toggle('active');
+
+    }
+    console.log(menuTrigger)
+    menuTrigger.addEventListener('click',event => {
+        navigation.toggle();
+    })
+
+    let navItems = navigation.querySelectorAll('a');
+    navItems.forEach(item => {
+        item.addEventListener('click', event => {
+            navigation.toggle();
+        })
+    })
+}
+
 //handle form submission
-var form = document.querySelector('#contactForm');
+let form = document.querySelector('#contactForm');
 form.addEventListener('submit', (event) => {
 
     event.preventDefault();
