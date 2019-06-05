@@ -52,7 +52,7 @@
             text-transform: uppercase;
             font-size: 1.5rem;
 
-            &:hover{
+            &:hover, &:focus, &:active{
                 background-position: 100%;
                 transform: translateX(1rem);
                 color:$color-white;

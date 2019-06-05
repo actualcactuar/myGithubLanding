@@ -365,7 +365,7 @@ a.btn {
       transition: background-position 200ms ease, transform 200ms ease, color 200ms ease;
       text-transform: uppercase;
       font-size: 1.5rem; }
-      .navigation__items a:hover {
+      .navigation__items a:hover, .navigation__items a:focus, .navigation__items a:active {
         background-position: 100%;
         transform: translateX(1rem);
         color: #fefefe; }
