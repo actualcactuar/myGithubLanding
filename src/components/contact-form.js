@@ -1,6 +1,7 @@
 
 
 export class DynamicForm {
+    
     constructor(element){
         this.host = element;
         this.inputs = this.host.querySelectorAll('input,textarea,select');
