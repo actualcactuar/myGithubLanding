@@ -322,7 +322,7 @@ a.btn {
   [class^="col"] {
     padding: 1rem !important; } }
 
-#menu-trigger {
+.menu-overlay-btn {
   position: fixed;
   top: 0;
   right: 0;
@@ -343,9 +343,10 @@ a.btn {
   align-items: center;
   justify-content: center;
   transform: scaleY(0);
-  transition: transform 400ms ease; }
+  transition: transform 400ms ease 400ms; }
   .navigation.active {
-    transform: scaleY(1); }
+    transform: scaleY(1);
+    transition: transform 400ms ease; }
     .navigation.active .navigation__items {
       opacity: 1;
       transition: opacity 200ms ease 200ms; }
@@ -355,7 +356,7 @@ a.btn {
     justify-content: flex-start;
     align-items: center;
     opacity: 0;
-    transition: opacity 200ms ease 0ms; }
+    transition: opacity 200ms ease 400ms; }
     .navigation__items a {
       text-decoration: none;
       color: #323232;
@@ -369,6 +370,14 @@ a.btn {
         background-position: 100%;
         transform: translateX(1rem);
         color: #fefefe; }
+
+@media screen and (max-width: 425px) {
+  .navigation {
+    transform: scaleY(1) translateX(100%); }
+    .navigation.active {
+      transform: scaleY(1) translateX(0); }
+    .navigation__items a {
+      font-size: 1.25rem; } }
 
 .container {
   box-sizing: border-box;
@@ -390,10 +399,10 @@ a.btn {
 theme-switch {
   z-index: 10; }
 
-#contactForm {
+.dynamic-form {
   margin-top: 1rem;
   position: relative; }
-  #contactForm .form__completed-dialog {
+  .dynamic-form .form__completed-dialog {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -406,7 +415,7 @@ theme-switch {
     box-shadow: 0px 1px 4px -2px;
     border-radius: 4px;
     transition: transform 0ms ease 200ms, opacity 200ms ease; }
-  #contactForm.completed .form__completed-dialog {
+  .dynamic-form.completed .form__completed-dialog {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     transition: transform 200ms ease, opacity 200ms ease; }

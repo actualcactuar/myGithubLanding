@@ -1,44 +1,47 @@
 
-//handle form submission
-let form = document.querySelector('#contactForm');
-form.addEventListener('submit', (event) => {
 
-    event.preventDefault();
+export class DynamicForm {
+    constructor(element){
+        this.host = element;
+        this.inputs = this.host.querySelectorAll('input,textarea,select');
+        this.host.addEventListener('submit',this.send); 
+    }
 
-    let form = event.target;
-    
-    let button = form.querySelector('button');
-    button.classList.add('active');
+    get data () {
+        let data = {};
+        this.inputs.forEach(input => data[input.getAttribute('name')] = input.value);
+        return data;
+    }
 
-    let formJSON = {};
+    send (event) {
+        console.log(event)
 
-    let inputs = form.querySelectorAll('input,textarea');
-    inputs.forEach(input => {
-        let key = input.getAttribute('name');
-        let value = input.value;
-        formJSON[key] = value;
-    })
+        // If fetch is not supported default to oldschool submission
+        if(!('fetch' in window)){return};
+        
+        event.preventDefault();
 
-    form.classList.add('sending');
+        this.host.classList.add('sending');
 
-    fetch(form.getAttribute('action'),{
-        method:form.getAttribute('method'),
-        headers: {
-                "Content-Type": form.getAttribute('enctype'),
-            },
-        body:JSON.stringify(formJSON)
-    })
-    .then(res => res.json())
-    .then(json => {
-        form.classList.remove('sending');
-        form.classList.add('completed');
-        button.classList.remove('active');
-        form.reset();
+        fetch(this.host.action,{
+            method:this.host.method,
+            headers: {
+                    "Content-Type": this.host.enctype,
+                },
+            body:JSON.stringify(this.data)
+        })
+        .then(res => res.json())
+        .then(json => {
+            this.host.classList.remove('sending');
+            this.host.classList.add('completed');
+            form.reset();
 
-        setTimeout(()=>{
-            form.classList.remove('completed');
-        },1000)
-    })
+            setTimeout(()=>{
+                form.classList.remove('completed');
+            },1000)
+        })
+
+    }
 
 
-})
+}

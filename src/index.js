@@ -2,15 +2,21 @@
 import './styles/styles.scss';
 
 // js here -->
-import './components/contact-form';
+import { DynamicForm } from './components/contact-form';
 import { Menu } from './components/menu';
 
-//target specific browser if needed
+// Target specific browser if needed
 document.body.setAttribute('user-agent',navigator.userAgent);
 
 
-//Initialize menu
+// Initialize menu
 let navigation = document.querySelector('.navigation');
 if(navigation){
-    new Menu(navigation)
+    new Menu(navigation);
+}
+
+// Initialize contact form
+let form = document.querySelector('.dynamic-form');
+if (form) {
+    new DynamicForm(form);
 }

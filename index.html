@@ -169,7 +169,7 @@
                                 method="POST" 
                                 action="https://us-central1-githubpagebackend.cloudfunctions.net/api/mail" 
                                 enctype="application/json"
-                                id="contactForm">
+                                class="dynamic-form">
 
                                 <div class="form__completed-dialog">
                                     <span class="icon--circle">
@@ -214,6 +214,7 @@
     </div>
 
     <!--Legacy Scripts-->
+    <script src="/dist/legacy/polyfill.js" nomodule></script>
     <script src="/dist/legacy/main.js" nomodule></script>
     <!--Modern scripts-->
     <script src="/dist/main.js" type="module"></script>
