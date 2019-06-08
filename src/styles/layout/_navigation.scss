@@ -1,4 +1,4 @@
-#menu-trigger {
+.menu-overlay-btn {
     position: fixed;
     top:0;
     right: 0;
@@ -20,10 +20,11 @@
     align-items: center;
     justify-content: center;
     transform: scaleY(0);
-    transition:transform 400ms ease;
+    transition:transform 400ms ease 400ms;
 
     &.active{
         transform:scaleY(1);
+        transition:transform 400ms ease;
 
         .navigation__items{
             opacity: 1;
@@ -38,7 +39,7 @@
         justify-content: flex-start;
         align-items: center;
         opacity: 0;
-        transition: opacity 200ms ease 0ms;
+        transition: opacity 200ms ease 400ms;
 
 
         a {
@@ -61,3 +62,21 @@
 
     }
 }
+
+@media screen and (max-width:$large-mobile){
+
+    .navigation{
+        
+        transform: scaleY(1) translateX(100%);
+
+        &.active {
+            transform: scaleY(1) translateX(0);
+        }
+
+        &__items{
+            a{
+                font-size: 1.25rem;
+            }
+        }
+    }
+} 
