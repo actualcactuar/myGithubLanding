@@ -1,7 +1,7 @@
 :root {
   --theme-color-default: #323232;
   --theme-bg-default: linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url("/assets/wallpapers/rawpixel_black_paint.jpg");
-  --dark-section-bg:linear-gradient(90deg,#232c2f 0% 20%,#5e7272 20% 40%,#515151 40% 60%,#a49e9c 60% 80%,#e1d6d3 80% 100%); }
+  --dark-section-bg:linear-gradient(90deg,#323232 0% 80%,#515151 80% 100%); }
 
 .btn, .icon-btn {
   font: inherit;
@@ -390,7 +390,8 @@ a.btn {
       .navigation__items a:hover, .navigation__items a:focus, .navigation__items a:active {
         background-position: 100%;
         transform: translateX(1rem);
-        color: #323232; }
+        color: #323232;
+        color: var(--theme-color-default); }
 
 @media screen and (max-width: 425px) {
   .navigation {
