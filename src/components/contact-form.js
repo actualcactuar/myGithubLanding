@@ -17,21 +17,18 @@ export class DynamicForm {
     }
 
     send (event) {
-        console.log(event)
 
         // If fetch is not supported default to oldschool submission
         if(!('fetch' in window)){return};
         
         event.preventDefault();
 
-        console.log(this)
-
         this.host.classList.add('sending');
 
         fetch(this.host.action,{
-            method:this.host.method,
+            method:this.host.getAttribute('method'),
             headers: {
-                    "Content-Type": this.host.enctype,
+                    "Content-Type": this.host.getAttribute('enctype'),
                 },
             body:JSON.stringify(this.data)
         })
@@ -42,11 +39,10 @@ export class DynamicForm {
             this.host.reset();
 
             setTimeout(()=>{
-                form.classList.remove('completed');
+                this.host.classList.remove('completed');
             },1000)
         })
 
     }
-
 
 }
