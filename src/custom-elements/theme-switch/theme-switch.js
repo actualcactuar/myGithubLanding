@@ -5,7 +5,7 @@ const themes = {
     default:{
         "--theme-color-default":"#323232",
         "--theme-bg-default":"linear-gradient(90deg, rgba(50,50,50,0.4),rgba(50,50,50,0.6)), url(\"/assets/wallpapers/rawpixel_black_paint.jpg\")",
-        "--dark-section-bg":"#323232"
+        "--dark-section-bg":"linear-gradient(90deg,#232c2f 0% 20%,#5e7272 20% 40%,#515151 40% 60%,#a49e9c 60% 80%,#e1d6d3 80% 100%)"
     },
     primary:{
         "--theme-color-default":"#1e8e97",
@@ -13,9 +13,9 @@ const themes = {
         "--dark-section-bg":"linear-gradient(45deg, #c76362 0% 5%,#1e8e97 5% 25%,#0b193f 25% 75%, #1e8e97 75% 95%, #C76363 95% 100%)"
     },
     secondary:{
-        "--theme-color-default":"#ef46ad",
-        "--theme-bg-default":"linear-gradient(90deg,rgba(239, 70, 173, 0.2),rgba(239, 70, 173, .2)),url(\"/assets/wallpapers/rawpixel_pink_paint.jpg\")",
-        "--dark-section-bg":"#ef46ad"
+        "--theme-color-default":"#e65266",
+        "--theme-bg-default":"linear-gradient(90deg,rgba(173, 42, 59, .4),rgba(230, 82, 102, .6)),url(\"/assets/wallpapers/rawpixel_red_smoke.jpg\")",
+        "--dark-section-bg":"linear-gradient(90deg,#ad2a3b 0% 25%,#e65266 25%)"
     },
     tertiary:{
         "--theme-color-default":"#ffb716",
