@@ -121,6 +121,10 @@ body {
 .u-text-left {
   text-align: left; }
 
+.fa-spin {
+  animation-timing-function: ease;
+  animation-duration: 1s; }
+
 .section {
   width: 100%;
   padding: 1rem;
@@ -208,13 +212,20 @@ body {
     position: relative;
     height: 22px;
     overflow: hidden;
-    transition: width 200ms ease; }
+    transition: width 200ms ease;
+    opacity: 1; }
   .btn [class^="btn__level--"], .icon-btn [class^="btn__level--"] {
     transition: transform 200ms ease;
     white-space: nowrap;
     text-align: center !important; }
   .btn.active [class^="btn__level--"], .icon-btn.active [class^="btn__level--"] {
     transform: translateY(-100%); }
+  .btn.active .btn__level--third, .icon-btn.active .btn__level--third {
+    opacity: 0; }
+  .btn.completed [class^="btn__level--"], .icon-btn.completed [class^="btn__level--"] {
+    transform: translateY(-200%); }
+  .btn.completed .btn__level--second, .icon-btn.completed .btn__level--second {
+    opacity: 0; }
 
 a.btn {
   text-decoration: none; }

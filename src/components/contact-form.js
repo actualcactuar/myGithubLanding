@@ -7,7 +7,8 @@ export class DynamicForm {
         this.inputs = this.host.querySelectorAll('input,textarea,select');
         this.host.addEventListener('submit', event => {
             this.send(event);
-        }); 
+        });
+        this.submitButton = this.host.querySelector('button[type="submit"]');
     }
 
     get data () {
@@ -18,12 +19,12 @@ export class DynamicForm {
 
     send (event) {
 
+        this.submitButton.classList.add('active');
+
         // If fetch is not supported default to oldschool submission
         if(!('fetch' in window)){return};
         
         event.preventDefault();
-
-        this.host.classList.add('sending');
 
         fetch(this.host.action,{
             method:this.host.getAttribute('method'),
@@ -34,12 +35,12 @@ export class DynamicForm {
         })
         .then(res => res.json())
         .then(json => {
-            this.host.classList.remove('sending');
-            this.host.classList.add('completed');
             this.host.reset();
+            this.submitButton.classList.remove('active');
+            this.submitButton.classList.add('completed');
 
-            setTimeout(()=>{
-                this.host.classList.remove('completed');
+            setTimeout(()=>{;
+                this.submitButton.classList.remove('completed');
             },1000)
         })
 
