@@ -3,8 +3,8 @@ export class Menu {
 
     constructor(element){
         this.host = element;
-        this._identifier = element.getAttribute('id')
-        this.triggers = document.querySelectorAll(`[trigger-for="#${this._identifier}"`);
+        this._identifier = element.getAttribute('id');
+        this.triggers = document.querySelectorAll(`[trigger-for="#${this._identifier}"]`);
         this.opened = false;
         this.items = this.host.querySelectorAll('a');
 
