@@ -61,7 +61,7 @@
         background-image: var(--theme-bg-default);
         color:$color-white;
         margin-top: 0;
-        padding-top: 0;
+        padding-top: 3rem;
         clip-path: polygon(0 0rem, 100% 0, 100% calc(100% - 10rem), 0 100%);
     }
 }

@@ -30,7 +30,26 @@
             </div>
         </button>
 
+        <div class="theme-wrapper">
+
+            <button class="u-ripple icon-btn" trigger-for="sample-theme-switch">
+                <div class="btn__levels">
+                    <div class="btn__level--first">
+                        <i class="fal fa-palette fa-fw"></i>
+                    </div>
+                    <div class="btn__level--second">
+                        <i class="fal fa-times fa-fw"></i>
+                    </div>
+                </div>
+            </button>
+            <c-theme-switch id="sample-theme-switch" active-theme="default"></c-theme-switch>
+            
+
+        </div>
+
         <div class="navigation" id="menu">
+
+            
             <div class="navigation__items">
                 <a href="#" class="u-ripple-light">01 back to top</a>
                 <a href="#whoami" class="u-ripple-light">02 who am i</a>
@@ -38,6 +57,7 @@
                 <a href="#" class="u-ripple-light">04 other section</a>
                 <a href="#getintouch" class="u-ripple-light">05 get in touch</a>
             </div>
+
         </div>
 
         <div class="section header section--clip">
@@ -53,17 +73,7 @@
             <a class="btn u-ripple" href="https://github.com/actualcactuar" target="_blank"><i class="fab fa-github"></i> Fork me on Github</a>
             <a class="btn u-ripple" href="https://twitter.com/actualcactuar" target="_blank"><i class="fab fa-twitter"></i> Follow me on Twitter</a>
 
-            <button class="u-ripple icon-btn" trigger-for="sample-theme-switch">
-                <div class="btn__levels">
-                    <div class="btn__level--first">
-                        <i class="fal fa-palette fa-fw"></i>
-                    </div>
-                    <div class="btn__level--second">
-                        <i class="fal fa-times fa-fw"></i>
-                    </div>
-                </div>
-            </button>
-            <c-theme-switch id="sample-theme-switch" active-theme="default"></c-theme-switch>
+            
             
             
          
@@ -217,7 +227,6 @@
     <script src="/dist/legacy/main.js" nomodule></script>
     <!--Modern scripts-->
     <script src="/dist/main.js" type="module"></script>
-    <script src="/assets/customelements/themeswitch.js" type="module"></script>
     <script src="/dist/elements.js" type="module"></script>
 </body>
 </html>
