@@ -14,13 +14,13 @@ const themes = {
     },
     secondary:{
         "--theme-color-default":"#e65266",
-        "--theme-bg-default":"linear-gradient(90deg,rgba(173, 42, 59, .4),rgba(230, 82, 102, .6)),url(\"/assets/wallpapers/rawpixel_red_smoke.jpg\")",
+        "--theme-bg-default":"linear-gradient(90deg,#ad2a3b,rgba(230, 82, 102, .5)),url(\"/assets/wallpapers/rawpixel_red_smoke.jpg\")",
         "--dark-section-bg":"linear-gradient(90deg,#ad2a3b 0% 25%,#e65266 25%)"
     },
     tertiary:{
-        "--theme-color-default":"#ffb716",
-        "--theme-bg-default":"url(\"/assets/wallpapers/rawpixel_yellow.jpg\")",
-        "--dark-section-bg":"#ffb716"
+        "--theme-color-default":"#323232",
+        "--theme-bg-default":"linear-gradient(90deg,rgba(0,0,0,0.2) 0% 50%,rgba(0,0,0,0.4) 50% 100%),url(\"/assets/wallpapers/rawpixel_happy_vacation.jpg\")",
+        "--dark-section-bg":"linear-gradient(25deg,rgba(0,0,0,0.2) 0% 50%,rgba(0,0,0,0.4) 50% 100%),url(\"/assets/wallpapers/rawpixel_road.jpg\")",
     }
 }
 
