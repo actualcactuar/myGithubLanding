@@ -35,12 +35,12 @@ if(sharer){
                 text: 'Homepage / showcase of my favourite technologies',
                 url: window.location.href
               }).catch(err => {
-                prompt("Erroc occured while sharing, here is a snippet!", window.location.href);
+                prompt("Error occured while sharing, here is a snippet!", window.location.href);
                   
               })
         },
         'prompt': () => {
-            prompt("Your browser doesn't support share API, but here is a snippet!", window.location.href);
+            prompt("Your browser doesn't support the share API, but here is a snippet!", window.location.href);
         }
     }
 
