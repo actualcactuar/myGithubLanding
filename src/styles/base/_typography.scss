@@ -82,6 +82,10 @@ body {
 
 @media screen and (max-width:$large-mobile){
 
+    html{
+        font-size: 14px;
+    }
+
     .hero{
         height:25vh;
         &__title{

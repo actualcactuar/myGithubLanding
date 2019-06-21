@@ -17,6 +17,17 @@
     box-shadow: -2px 3px 5px -3px #000;
 }
 
+.some-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    
+    &> a:not(:last-child) {
+        margin-right: .9rem;
+    }
+}
+
+
 theme-switch{
     z-index: 10;
 }

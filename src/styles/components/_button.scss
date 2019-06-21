@@ -23,6 +23,9 @@
     padding: 0;
     background-color: $color-white;
     color:$color-black;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
 
 .btn, .icon-btn{
