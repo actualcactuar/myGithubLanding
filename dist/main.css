@@ -130,6 +130,10 @@ body {
   animation-timing-function: ease;
   animation-duration: 1s; }
 
+body[can-fetch="false"] .u-require-fetch,
+body[can-webComponents="false"] .u-require-web-components {
+  display: none !important; }
+
 .section {
   width: 100%;
   padding: 1rem;
