@@ -131,29 +131,17 @@
 
         <div class="section section__light section--clip">
             
-            <h2 class="title-secondary title-secondary--border">awesome title</h2>
+            <h2 class="title-secondary title-secondary--border">latest posts</h2>
 
-            <div class="row">
-                <div class="col-1-of-3">
+            <div class="row" id="posts">
+                <repeat as="div" data="posts" class="col-1-of-2">
                     <div class="u-text-center">
-                        <h2 class="title-secondary">50:50 col</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
+                        <h2 class="title-secondary">{{title}}</h2>
+                        <p>{{body}}</p>
                     </div>
-                </div>
-                <div class="col-1-of-3">
-                    <div class="u-text-center">
-                        <h2 class="title-secondary">50:50 col</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
-                    </div>
-                </div>
-                <div class="col-1-of-3">
-                    <div class="u-text-center">
-                        <h2 class="title-secondary">50:50 col</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel dicta molestias vitae nulla, eos voluptatum laboriosam aliquid culpa nisi magnam perspiciatis maxime, numquam, ut tempora labore aspernatur nemo obcaecati asperiores?</p>
-                    </div>
-                </div>
+                </repeat>
             </div>
+
         </div>
 
         <div class="section footer" id="share-section">

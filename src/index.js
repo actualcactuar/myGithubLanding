@@ -52,18 +52,18 @@ if(sharer){
 }
 
 
-const tpl = `
-    <repeat class="card" as="div" data="posts">
-        <h3>{{title}}</h3>
-        <p>{{body}}</p>
-    </repeat>
-`
-
 const engine = new TemplateRendererEngine();
+const postsTarget = document.querySelector('#posts');
+const tpl = postsTarget ? postsTarget.innerHTML : null;
 
-fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()).then(json => {
+if(tpl){
 
-    let renderedPosts = engine.render(tpl,{posts:json});
-    console.log(renderedPosts);
+    fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()).then(json => {
+        let topPosts = json.slice(0,4)
+        let renderedPosts = engine.render(tpl,{posts:topPosts});
+        postsTarget.innerHTML = renderedPosts;
+    
+    });
+    
+}
 
-});
