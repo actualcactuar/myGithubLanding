@@ -62,7 +62,6 @@ export class TemplateRendererEngine {
         let _output = string;
         _output = this._repeat(_output,data);        
         _output = this._evaluate(_output,data);
-        console.log(_output);
         return _output;
     } 
 

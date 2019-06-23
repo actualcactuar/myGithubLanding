@@ -8,6 +8,10 @@ import { TemplateRendererEngine } from './lib/renderer';
 
 // Target specific browser if needed
 document.body.setAttribute('user-agent',navigator.userAgent);
+const canFetch = 'fetch' in window ? true : false;
+document.body.setAttribute('can-fetch',canFetch);
+const canWebComponents = 'customElements' in window ? true :false;
+document.body.setAttribute('can-webComponents',canWebComponents);
 
 
 // Initialize menu
