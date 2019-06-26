@@ -85,7 +85,7 @@ body {
 .hero {
   margin: 2rem;
   width: calc(100% - 4rem);
-  height: 45vh;
+  height: 20rem;
   border: 4px solid #fefefe;
   display: flex;
   justify-content: center;
@@ -100,7 +100,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .hero {
-    height: 40vh; }
+    height: 15rem; }
     .hero__title {
       font-size: 3.5rem; } }
 
@@ -108,7 +108,7 @@ body {
   html {
     font-size: 14px; }
   .hero {
-    height: 25vh; }
+    height: 10rem; }
     .hero__title {
       font-size: 2.25rem; }
   .title-secondary {
@@ -179,6 +179,7 @@ body[can-webComponents="false"] .u-require-web-components {
     background-image: var(--theme-bg-default);
     color: #fefefe;
     margin-top: 0;
+    min-height: 100vh;
     padding-top: 3rem;
     clip-path: polygon(0 0rem, 100% 0, 100% calc(100% - 10rem), 0 100%); }
 
@@ -428,7 +429,8 @@ a.btn {
   height: 8rem;
   border-radius: 0 50% 50% 50%;
   border: 4px solid #fefefe;
-  box-shadow: -2px 3px 5px -3px #000; }
+  box-shadow: -2px 3px 5px -3px #000;
+  margin: 3rem 0 2rem; }
 
 .some-buttons {
   display: flex;
