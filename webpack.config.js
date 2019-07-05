@@ -53,6 +53,7 @@ module.exports = {
     compress: true,
     watchContentBase: true,
     port: 8080,
+    host:'192.168.1.220',
     index: 'index.html',
     inline: true,
     proxy: {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Project template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--Icons-->
     <script src="https://kit.fontawesome.com/29e0ac0d41.js"></script>
@@ -128,7 +128,7 @@
             </div>
         </div>
 
-        <div class="section section__light section--clip u-require-fetch">
+        <div class="section section__light section--clip">
             
             <h2 class="title-secondary title-secondary--border">Latest posts</h2>
 
@@ -172,6 +172,16 @@
                                 enctype="application/json"
                                 class="dynamic-form">
 
+                                <div class="form-field">
+                                    <span class="form-field__label">email</span>
+                                    <input required type="email" name="email" class="form-field__input" placeholder="Email for contact">
+                                </div>
+
+                                <div class="form-field">
+                                    <textarea required type="text" name="message" class="form-field__textarea" placeholder="Jit something down!"></textarea>
+                                </div>
+    
+                                <!--
                                 <div class="input">
                                     <input required type="email" name="email" class="input__field" placeholder="dummy">
                                     <span class="input__placeholder">email</span>
@@ -180,7 +190,7 @@
                                 <div class="input">
                                     <textarea required type="text" name="message" class="input__field" placeholder="dummy"></textarea>
                                     <span class="input__placeholder">message</span>
-                                </div>
+                                </div>-->
     
                                 <button class="u-ripple-light btn btn--flat" color="primary" type="submit">
                                     <div class="btn__levels">

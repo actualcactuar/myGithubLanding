@@ -1,4 +1,4 @@
-
+import * as axios from 'axios';
 
 export class DynamicForm {
     
@@ -20,20 +20,15 @@ export class DynamicForm {
     send (event) {
 
         this.submitButton.classList.add('active');
-
-        // If fetch is not supported default to oldschool submission
-        if(!('fetch' in window)){return};
         
         event.preventDefault();
 
-        fetch(this.host.action,{
-            method:this.host.getAttribute('method'),
+        axios.post(this.host.action,this.data,{
             headers: {
-                    "Content-Type": this.host.getAttribute('enctype'),
-                },
-            body:JSON.stringify(this.data)
+                "Content-Type": this.host.getAttribute('enctype'),
+            },
         })
-        .then(res => res.json())
+        .then(res => res.data)
         .then(json => {
             this.host.reset();
             this.submitButton.classList.remove('active');

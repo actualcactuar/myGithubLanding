@@ -1,6 +1,10 @@
 // import styles here
 import './styles/styles.scss';
 
+
+// modules here -->
+import * as axios from 'axios' ;
+
 // js here -->
 import { DynamicForm } from './components/contact-form';
 import { Menu } from './components/menu';
@@ -8,8 +12,6 @@ import { TemplateRendererEngine } from './lib/renderer';
 
 // Target specific browser if needed
 document.body.setAttribute('user-agent',navigator.userAgent);
-const canFetch = 'fetch' in window ? true : false;
-document.body.setAttribute('can-fetch',canFetch);
 const canWebComponents = 'customElements' in window ? true :false;
 document.body.setAttribute('can-webComponents',canWebComponents);
 
@@ -62,12 +64,37 @@ const tpl = postsTarget ? postsTarget.innerHTML : null;
 
 if(tpl){
 
-    fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()).then(json => {
+    axios.get('https://jsonplaceholder.typicode.com/posts').then(res => res.data).then(json => {
         let topPosts = json.slice(0,4)
         let renderedPosts = engine.render(tpl,{posts:topPosts});
         postsTarget.innerHTML = renderedPosts;
-    
-    });
+    }).then(() => 
+        createObserver()
+    );
     
 }
 
+function createObserver () {
+
+    const cols = document.querySelectorAll('[class^="col-"]');
+
+    if(!('IntersectionObserver' in window)){
+
+        cols.forEach(col => col.classList.add('visible'));
+
+    } else {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.intersectionRatio > 0) {
+                entry.target.classList.add('visible');
+              } 
+            });
+          });
+          
+          cols.forEach(col => {
+            observer.observe(col);
+          });
+    }
+
+    
+}

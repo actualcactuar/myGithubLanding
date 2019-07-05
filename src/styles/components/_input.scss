@@ -63,3 +63,35 @@
 
     }
 }
+
+.form-field {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #323232;
+}
+
+input.form-field__input {
+    flex: 2;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font: inherit;
+}
+
+span.form-field__label {
+    border-right: 1px solid #323232;
+    padding: .5rem 1rem .5rem 0;
+    margin-right: 1rem;
+}
+
+
+textarea.form-field__textarea {
+    width: 100%!important;
+    height: 5rem;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    padding: 1rem 0;
+    font: inherit;
+}

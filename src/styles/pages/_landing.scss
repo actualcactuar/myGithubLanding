@@ -72,3 +72,14 @@ span.icon--circle {
     border: 1px solid #333;
     border-radius: 50%;
 }
+
+.row [class^="col"] {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: transform 300ms ease 100ms, opacity 300ms ease 100ms;
+
+    &.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
