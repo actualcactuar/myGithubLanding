@@ -130,14 +130,16 @@
 
         <div class="section section__light section--clip">
             
-            <h2 class="title-secondary title-secondary--border">Latest posts</h2>
+            <h2 class="title-secondary title-secondary--border">Hacker News</h2>
 
-            <div class="row" id="posts">
-                <repeat as="div" data="posts" class="col-1-of-2">
-                    <div class="u-text-center">
-                        <h2 class="title-secondary">{{title}}</h2>
-                        <p>{{body}}</p>
-                    </div>
+            <div class="row" id="hNewsContainer">
+                <repeat as="div" data="news" class="col-1-of-2 hacker-news-entry">
+                    <a href="{{url}}" target="_blank">
+                        <div class="u-text-center">
+                            <h2 class="title-secondary">{{title}}</h2>
+                            <p>Written by: {{by}}</p>
+                        </div>
+                    </a>
                 </repeat>
             </div>
 

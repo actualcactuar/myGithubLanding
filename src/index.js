@@ -59,24 +59,31 @@ if(sharer){
 
 
 const engine = new TemplateRendererEngine();
-const postsTarget = document.querySelector('#posts');
-const tpl = postsTarget ? postsTarget.innerHTML : null;
+const newsContainer = document.querySelector('#hNewsContainer');
+const tpl = newsContainer ? newsContainer.innerHTML : null;
+const storyUrl = id => `https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`;
 
-if(tpl){
-
-    axios.get('https://jsonplaceholder.typicode.com/posts').then(res => res.data).then(json => {
-        let topPosts = json.slice(0,4)
-        let renderedPosts = engine.render(tpl,{posts:topPosts});
-        postsTarget.innerHTML = renderedPosts;
-    }).then(() => 
-        createObserver()
-    );
-    
+if(tpl && newsContainer){
+    fetchTopTenHackerNews();
 }
 
-function createObserver () {
+async function fetchTopTenHackerNews () {
+    const topStores = await axios.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
+    const parsedTopStories = await topStores.data;
+    const topTen = parsedTopStories.slice(0,10);
+    Promise.all(topTen.map(id => fetchDetails(id))).then(values => newsContainer.innerHTML = engine.render(tpl,{news:values})).then(()=> createObserver('.hacker-news-entry'));
+}
 
-    const cols = document.querySelectorAll('[class^="col-"]');
+async function fetchDetails (id){
+    let data = await axios.get(storyUrl(id));
+    let detail = await data.data;
+    return detail;
+}
+
+
+function createObserver (selector) {
+
+    const cols = document.querySelectorAll(selector);
 
     if(!('IntersectionObserver' in window)){
 
@@ -98,3 +105,5 @@ function createObserver () {
 
     
 }
+
+createObserver('[class^="col-"]');

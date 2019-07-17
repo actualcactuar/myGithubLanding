@@ -503,6 +503,11 @@ span.icon--circle {
   opacity: 0;
   transform: translateY(2rem);
   transition: transform 300ms ease 100ms, opacity 300ms ease 100ms; }
+  .row [class^="col"] > a:not(.btn):not(.icon-btn) {
+    color: inherit;
+    text-decoration: none; }
+    .row [class^="col"] > a:not(.btn):not(.icon-btn):hover {
+      text-decoration: underline; }
   .row [class^="col"].visible {
     opacity: 1;
     transform: translateX(0); }

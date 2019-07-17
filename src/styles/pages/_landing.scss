@@ -78,6 +78,15 @@ span.icon--circle {
     transform: translateY(2rem);
     transition: transform 300ms ease 100ms, opacity 300ms ease 100ms;
 
+    & > a:not(.btn):not(.icon-btn) {
+        color: inherit;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+
     &.visible {
         opacity: 1;
         transform: translateX(0);
