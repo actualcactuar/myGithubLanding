@@ -1,8 +1,11 @@
 .input{
     position: relative;
-    padding: 0 0 1rem 0;
+    //padding: 0 0 1rem 0;
     margin:1rem 0 0 0;
     z-index: 1;
+    border-radius: .5rem;
+    border: 1px solid $color-black;
+    padding: .5rem 1rem;
 
     &__field{
         border:none;
@@ -15,13 +18,11 @@
         color:$color-black;
         background-color: transparent;
         font:inherit;
-        border: 1px solid $color-black;
-        padding: .5rem 1rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        border-radius: 2rem;
+        width:100%;
 
         &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: transparent;
@@ -47,18 +48,19 @@
 
     &__placeholder{
         position: absolute;
-        top: 1.75rem;
+        top: 1.5rem;
         left:calc(1rem + 2px);
         height: 1rem;
         line-height: 1rem;
         transition:transform 200ms ease, font-size 200ms ease;
-        transform: translateY(-3rem);
+        transform: translateY(-2rem);
         font-size: .8rem;
         z-index: -1;
+        background-color: $color-card-white;
     }
 
     &__field:not(:focus):placeholder-shown + &__placeholder{
-        transform: translateY(-1rem);
+        transform: translateY(-.9rem);
         font-size: 1rem;
 
     }
