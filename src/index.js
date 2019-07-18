@@ -107,3 +107,12 @@ function createObserver (selector) {
 }
 
 createObserver('[class^="col-"]');
+document.addEventListener('DOMContentLoaded', event => {
+    const themeSwitch = document.querySelector('c-theme-switch');
+    const cachedTheme = localStorage['cachedTheme'];
+    if(cachedTheme && themeSwitch){
+        themeSwitch.setAttribute('active-theme',cachedTheme);
+    }
+    document.body.style.opacity = "1";
+})
+

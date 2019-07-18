@@ -46,11 +46,19 @@ export class ThemeSwitch extends HTMLElement {
             container.classList.toggle('active')
         }));
 
-        let options = this.shadowRoot.querySelectorAll('.theme-switch__option');
-        options.forEach((option,index) => {
+        
+        this.options.forEach((option,index) => {
             option.style.transitionDelay = `${(25 * index) + 100}ms`;
+
+            const theme = option.getAttribute('theme');
+
+            if(this.cachedTheme && theme === this.cachedTheme){
+                option.classList.add('active');
+            }else if (!this.cachedTheme && theme === 'default'){
+                option.classList.add('active')
+            }
+
             option.addEventListener('click',event => {
-                var theme = option.getAttribute('theme');
                 var activeOption = this.shadowRoot.querySelector('.theme-switch__option.active');
                 if(activeOption){
                     activeOption.classList.remove('active');
@@ -67,16 +75,29 @@ export class ThemeSwitch extends HTMLElement {
                 container.classList.toggle('active');
             })
         }
+        
     }
 
     disconnectedCallback() {}
       
     adoptedCallback() {}
+
+    get options () {
+        return this.shadowRoot.querySelectorAll('.theme-switch__option');
+    }
     
+    setCachedTheme(theme){
+        localStorage['cachedTheme'] = theme;
+    }
+
+    get cachedTheme(){
+        return 'cachedTheme' in localStorage ? localStorage['cachedTheme'] : null;
+    }
     
     switchTheme(value){
         //Change theme on attribute change
         const currentMode = themes[value];
+        this.setCachedTheme(value);
         Object.keys(currentMode).forEach(property => document.body.style.setProperty(property, currentMode[property]));
     }
 
