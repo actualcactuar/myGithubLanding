@@ -450,6 +450,10 @@ repeat + .repeat-waiter {
     .navigation__items a {
       font-size: 1.25rem; } }
 
+body {
+  opacity: 0;
+  transform: opacity 200ms ease; }
+
 .container {
   box-sizing: border-box;
   background-size: cover;
