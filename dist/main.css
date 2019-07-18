@@ -260,9 +260,11 @@ a.btn {
 
 .input {
   position: relative;
-  padding: 0 0 1rem 0;
   margin: 1rem 0 0 0;
-  z-index: 1; }
+  z-index: 1;
+  border-radius: .5rem;
+  border: 1px solid #323232;
+  padding: .5rem 1rem; }
   .input__field {
     border: none;
     outline: none;
@@ -274,13 +276,11 @@ a.btn {
     color: #323232;
     background-color: transparent;
     font: inherit;
-    border: 1px solid #323232;
-    padding: .5rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    border-radius: 2rem; }
+    width: 100%; }
     .input__field::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: transparent; }
@@ -299,16 +299,17 @@ a.btn {
     border-radius: 4px; }
   .input__placeholder {
     position: absolute;
-    top: 1.75rem;
+    top: 1.5rem;
     left: calc(1rem + 2px);
     height: 1rem;
     line-height: 1rem;
     transition: transform 200ms ease, font-size 200ms ease;
-    transform: translateY(-3rem);
+    transform: translateY(-2rem);
     font-size: .8rem;
-    z-index: -1; }
+    z-index: -1;
+    background-color: #f9f9f9; }
   .input__field:not(:focus):placeholder-shown + .input__placeholder {
-    transform: translateY(-1rem);
+    transform: translateY(-0.9rem);
     font-size: 1rem; }
 
 .form-field {
@@ -479,7 +480,8 @@ theme-switch {
 
 .dynamic-form {
   margin-top: 1rem;
-  position: relative; }
+  position: relative;
+  text-align: center !important; }
   .dynamic-form .form__completed-dialog {
     position: absolute;
     top: 50%;
