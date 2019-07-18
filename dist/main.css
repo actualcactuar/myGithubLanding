@@ -338,6 +338,15 @@ textarea.form-field__textarea {
   padding: 1rem 0;
   font: inherit; }
 
+.repeat-waiter {
+  display: none; }
+
+repeat {
+  display: none; }
+
+repeat + .repeat-waiter {
+  display: block; }
+
 .row {
   max-width: 71.25rem;
   margin: 0 auto;
