@@ -1,69 +1,55 @@
-
-
 export class TemplateRendererEngine {
+  repeat(string, data) {
+    const repeatMatch = /<(repeat).*?>(.|[\n\r](?!(<repeat)))*<\/(repeat)>/g;
+    const repeats = string.match(repeatMatch);
+    let output = string;
+    if (repeats) {
+      repeats.forEach(repeat => {
+        const startTagMatch = /<(repeat).*?>/;
+        const asMatch = /as=".*?"/;
+        const dataMatch = /data=".*?"/;
+        const startTag = repeat.match(startTagMatch)[0];
+        const asValue = startTag.match(asMatch)[0].slice(4, -1);
+        const dataValue = startTag.match(dataMatch)[0].slice(6, -1);
+        let repeatArr = [];
 
-    constructor(){
-
-    }
-
-    _repeat (string,data) {
-
-        let repeatMatch = /\<(repeat).*?\>(.|[\n\r](?!(<repeat)))*\<\/(repeat)\>/g;
-        let repeats = string.match(repeatMatch);
-        let _output = string;
-        if(repeats){
-            repeats.forEach(repeat => {
-                let startTagMatch = /\<(repeat).*?\>/;
-                let asMatch = /as\=\".*?\"/;
-                let dataMatch = /data\=\".*?\"/;
-                let startTag = repeat.match(startTagMatch)[0];
-                let asValue = startTag.match(asMatch)[0].slice(4,-1);
-                let dataValue = startTag.match(dataMatch)[0].slice(6,-1);
-                let repeatArr = [];
-                
-                if(Array.isArray(data[dataValue])){
-                    repeatArr = data[dataValue].map(row => {
-                        let result =  this._evaluate(repeat,row)
-                        let tags = result.match(/repeat/g);
-                        tags.forEach(tag => {
-                            result = result.replace(tag,asValue);
-                        })
-                        return result;
-                    })
-
-                }
-
-                _output = _output.replace(repeat, repeatArr.join(''));
-            })
+        if (Array.isArray(data[dataValue])) {
+          repeatArr = data[dataValue].map(row => {
+            let result = this.constructor.evaluate(repeat, row);
+            const tags = result.match(/repeat/g);
+            tags.forEach(tag => {
+              result = result.replace(tag, asValue);
+            });
+            return result;
+          });
         }
 
-        return _output;
-
+        output = output.replace(repeat, repeatArr.join(''));
+      });
     }
 
-    _evaluate (string,data) {
-        
-        let target = /\{\{.*?\}\}/g;
-        let matches = string.match(target);
-        let _output = string
+    return output;
+  }
 
-        if(matches){
-            matches.forEach(match => {
-                let key = match.slice(2,-2);
-                _output = _output.replace(match, data[key]);
-            })
-        }
+  static evaluate(string, data) {
+    const target = /\{\{.*?\}\}/g;
+    const matches = string.match(target);
+    let output = string;
 
-        return _output;
-
+    if (matches) {
+      matches.forEach(match => {
+        const key = match.slice(2, -2);
+        output = output.replace(match, data[key]);
+      });
     }
 
-    render (string,data){
-        let _output = string;
-        _output = this._repeat(_output,data);        
-        _output = this._evaluate(_output,data);
-        return _output;
-    } 
+    return output;
+  }
 
+  render(string, data) {
+    let output = string;
+    output = this.repeat(output, data);
+    output = this.constructor.evaluate(output, data);
+    return output;
+  }
 }
-
