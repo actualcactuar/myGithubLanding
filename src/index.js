@@ -40,10 +40,12 @@ if (sharer) {
           url: window.location.href,
         })
         .catch(() => {
+          // eslint-disable-next-line no-alert
           prompt('Error occured while sharing, here is a snippet!', window.location.href);
         });
     },
     prompt: () => {
+      // eslint-disable-next-line no-alert
       prompt("Your browser doesn't support the share API, but here is a snippet!", window.location.href);
     },
   };
@@ -53,30 +55,7 @@ if (sharer) {
   });
 }
 
-const engine = new TemplateRendererEngine();
-const newsContainer = document.querySelector('#hNewsContainer');
-const tpl = newsContainer ? newsContainer.innerHTML : null;
-const storyUrl = id => `https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`;
-
-const fetchDetails = async id => {
-  const { data } = await axios.get(storyUrl(id));
-  return data;
-};
-
-const fetchTopTenHackerNews = async () => {
-  const { data } = await axios.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
-  const topTen = data.slice(0, 10);
-  Promise.all(topTen.map(id => fetchDetails(id)))
-    // eslint-disable-next-line no-return-assign
-    .then(values => (newsContainer.innerHTML = engine.render(tpl, { news: values })))
-    .then(() => createObserver('.hacker-news-entry'));
-};
-
-if (tpl && newsContainer) {
-  fetchTopTenHackerNews();
-}
-
-function createObserver(selector) {
+const createObserver = selector => {
   const cols = document.querySelectorAll(selector);
 
   if (!('IntersectionObserver' in window)) {
@@ -94,10 +73,33 @@ function createObserver(selector) {
       observer.observe(col);
     });
   }
+};
+
+const engine = new TemplateRendererEngine();
+const newsContainer = document.querySelector('#hNewsContainer');
+const tpl = newsContainer ? newsContainer.innerHTML : null;
+const storyUrl = id => `https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`;
+
+const fetchDetails = async id => {
+  const { data } = await axios.get(storyUrl(id));
+  return data;
+};
+
+const fetchTopTenHackerNews = async () => {
+  const { data } = await axios.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
+  const topTen = data.slice(0, 10);
+  const values = await Promise.all(topTen.map(id => fetchDetails(id)));
+  newsContainer.innerHTML = engine.render(tpl, { news: values });
+  createObserver('.hacker-news-entry');
+};
+
+if (tpl && newsContainer) {
+  fetchTopTenHackerNews();
 }
 
 createObserver('[class^="col-"]');
-document.addEventListener('DOMContentLoaded', event => {
+
+document.addEventListener('DOMContentLoaded', () => {
   const themeSwitch = document.querySelector('c-theme-switch');
   const cachedTheme = localStorage.getItem('cachedTheme');
   if (cachedTheme && themeSwitch) {
