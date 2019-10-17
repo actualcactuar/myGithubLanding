@@ -91,32 +91,31 @@ export class ThemeSwitch extends HTMLElement {
     return this.shadowRoot.querySelectorAll('.theme-switch__option');
   }
 
-  setCachedTheme(theme) {
-    localStorage['cachedTheme'] = theme;
+  static setCachedTheme(theme) {
+    localStorage.cachedTheme = theme;
   }
 
-  get cachedTheme() {
-    return 'cachedTheme' in localStorage ? localStorage['cachedTheme'] : null;
+  static get cachedTheme() {
+    return 'cachedTheme' in localStorage ? localStorage.cachedTheme : null;
   }
 
   switchTheme(value) {
-    //Change theme on attribute change
+    // Change theme on attribute change
     const currentMode = themes[value];
-    this.setCachedTheme(value);
+    this.constructor.setCachedTheme(value);
     Object.keys(currentMode).forEach(property =>
       document.body.style.setProperty(property, currentMode[property]),
     );
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    //Calls per attr change
-    let attrCalls = {
+    // Calls per attr change
+    const attrCalls = {
       'active-theme': this.switchTheme,
     };
 
-    //if callback is assigned for named attr and it has previous value
-    if (name in attrCalls && oldValue && oldValue != newValue) {
-      console.log('[THEME SWITCH] attributes changed.', { name, oldValue, newValue });
+    // if callback is assigned for named attr and it has previous value
+    if (name in attrCalls && oldValue && oldValue !== newValue) {
       attrCalls[name].call(this, newValue);
     }
   }
