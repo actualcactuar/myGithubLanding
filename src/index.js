@@ -12,6 +12,8 @@ import { Menu } from 'components/menu';
 document.body.setAttribute('user-agent', navigator.userAgent);
 document.body.setAttribute('can-webComponents', 'customElements' in window);
 
+console.log('testing github ci');
+
 // Initialize menu
 const navigation = document.querySelector('.navigation');
 if (navigation) {
