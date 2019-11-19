@@ -21,6 +21,6 @@ jobs:
           npm ci
           npm i
           npm run webpack:buildall
-          git push
+          git push origin HEAD:master
         env:
           CI: true
