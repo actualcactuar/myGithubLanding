@@ -19,6 +19,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm ci
+          npm i
+          eslint src/index.js
           npm run webpack:buildall
         env:
           CI: true
