@@ -1,8 +1,0 @@
-@function colorSwitch($color) {
-    @if($color == $color-black) {
-        @return $color-white;
-    }@else {
-        @return $color-black;
-    }
-
-}
