@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -20,7 +20,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
-        npm run webpack:buildall --if-present
-        npm test
+        npm run webpack:build --if-present
       env:
         CI: true
