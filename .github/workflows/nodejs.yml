@@ -21,5 +21,6 @@ jobs:
           npm ci
           npm i
           npm run webpack:buildall
+          git push git@github.com:actualcactuar/actualcactuar.github.io.git
         env:
           CI: true
