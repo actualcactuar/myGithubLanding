@@ -1,0 +1,17 @@
+.card{
+    background-color: $color-card-white;
+    padding: 1rem;
+    border-radius: 2px;
+    box-shadow:$card-shadow $color-black;
+    color:$color-black;    
+    max-width: 600px;
+    width: 100%;
+    &, * {
+        
+    text-align: left!important;
+    }
+
+    & > *:first-child{
+        margin-top:0;
+    }
+}

@@ -1,0 +1,11 @@
+.repeat-waiter{
+    display: none;
+}
+
+repeat{
+    display: none;
+}
+
+repeat + .repeat-waiter{
+    display: block;
+}

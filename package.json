@@ -1,0 +1,48 @@
+{
+  "name": "webkit-sass-babel-project-core",
+  "version": "1.0.0",
+  "description": "starter project template, clone repo then npm i then npm start and youre good to go",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/actualcactuar/actualcactuar.github.io"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack:build": "webpack --mode=production --devtool=false --config webpack.config.js",
+    "webpack:buildlegacy": "webpack --mode=production --devtool=false --config legacy.config.js",
+    "webpack:buildall": "npm run webpack:build && npm run webpack:buildlegacy",
+    "start": "webpack-dev-server --config webpack.config.js"
+  },
+  "author": "Jiri Kiviniemi (actualcactuar)",
+  "license": "UNLICENCED",
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.18.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "tar": ">=4.4.2",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "axios": "^0.19.0"
+  }
+}

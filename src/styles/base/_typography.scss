@@ -1,0 +1,102 @@
+html {
+    //Hardcoded since all is relative to this
+    font-size: 16px;
+
+}
+
+body {
+    font: $font-weight-default $font-size-default $font-main;
+    color: $color-black;
+}
+
+
+.title-secondary{
+    font-family: $font-title;
+    font-size: 2rem;
+    text-align: center;
+
+    &--border{
+
+        display: inline-block;
+        margin: 2rem;
+        border: 3px solid $color-white;
+        border-color:inherit;
+        padding: 2rem 4rem;
+    }
+
+}
+
+.title-tertiary{
+    font-family: $font-title;
+    font-size: 1.5rem;
+    text-align: center;
+
+    &--border{
+
+        display: inline-block;
+        margin: 2rem;
+        border: 3px solid $color-white;
+        border-color:inherit;
+        padding: 1.5rem 3rem;
+    }
+
+}
+
+.first-letter{
+    text-align:left;
+    &::first-letter{
+        @include first-letter;
+    }
+}
+
+
+.hero {
+    margin: 2rem;
+    width: calc(100% - 4rem);
+    height: 20rem;
+    border: 4px solid $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: $small-tablet;
+
+    &__title {
+        font-weight: 700;
+        font-family: $font-title;
+        font-size: 5rem;    
+        margin: 0;
+        padding: 0 2rem;
+    }
+}
+
+
+@media screen and (max-width:$small-tablet){
+
+    .hero{
+        height:15rem;
+        &__title{
+            font-size: 3.5rem;
+        }
+    }
+} 
+
+@media screen and (max-width:$large-mobile){
+
+    html{
+        font-size: 14px;
+    }
+
+    .hero{
+        height:10rem;
+        &__title{
+            font-size: 2.25rem;
+        }
+    }
+    .title-secondary{
+        font-size: 1.5rem;
+    }
+} 
+
+@media screen and (max-width: $small-mobile){
+    
+}
