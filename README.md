@@ -1,4 +1,4 @@
-permalink: /index.html
+permalink: /dist/index.html
 
 This is a currently a work in progress project to become my introductory page showcasing all the fun native frontend stuff :3
 
